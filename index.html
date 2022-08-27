@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/radio.css">
+</head>
+<body>
+    <header>
+        <a href="">
+            <object class="logo" data="./assets/svg/logo.svg"></object>
+        </a>
+        <h1>Formulário de Personalização das Agendas e Planners</h1>
+    </header>
+
+    <div class="mainContainer">
+        <h2 class="title">
+            Formulário Preliminar de Personalização
+        </h2>
+        <p>
+            Texto exemplo descrição form, lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non nulla et ligula scelerisque aliquam sit amet vel risus. Donec ex orci, lacinia in libero a, condimentum mollis nibh.
+        </p>
+        <br>
+    </div>
+    
+
+
+    <div class="mainContainer">
+        <h2 class="title">
+            Endereço e Contato
+        </h2>
+        <p>
+            Texto exemplo Endenreço e Contato.
+        </p>
+        
+        <br><hr>
+
+        <!-- onsubmit="return ((e)=>{console.log(e) ; e.preventDefault()})(event)" -->
+        <form class="formSection" action="/teste">
+            <div class="inputDiv">
+                </span><sup class="mandatory"></sup> <br>
+                <span class="title">Informe seu nome completo</span>
+                <br>
+                <input id="nome" class="simpleInput" type="text" placeholder="Sua resposta" required>
+            </div>
+            
+            <hr>
+
+            <div class="inputDiv">
+                </span><sup class="mandatory"></sup> <br>
+                <span class="title">Informe seu e-mail</span>
+                <br>
+                <input id="email" class="simpleInput" type="email" placeholder="meu.email@exemplo.com" required>
+            </div>
+            
+            <hr>
+
+            <div class="inputDiv">
+            </span><sup class="mandatory"></sup> <br>
+                <span class="title">Informe seu número de telefone
+                <br>
+                <i>(o mesmo utilizado no contato do whatsapp)</i>
+                <br>
+                <input id="numero" class="simpleInput" type="text" placeholder="+55 (00) 90000-0000"required>
+            </div>
+            
+            <hr>
+
+            <div class="inputDiv">
+                </span><sup class="mandatory"></sup> <br>
+                <span class="title">Informe seu endereço completo
+                <br>
+                <i>(Contendo as seguintes informações: Nome do destinatário, Rua, Número, Bairro, Complemento, Cidade, Estado, CEP)</i> 
+                
+                <br>
+                <textarea id="endereco" class="simpleInput largeInput" type="text" placeholder="Sua resposta" required></textarea> 
+            </div>
+            
+            
+            
+            
+            <input id="teste" type="submit" value="Enviar">
+        </form>
+    </div>
+    
+
+
+    <div class="mainContainer">
+        <h2 class="title">
+            Informações Adicionais
+        </h2>
+        <p>
+            Texto exemplo Informações Adicionais.
+        </p>
+        
+        <br><hr>
+
+        <!-- onsubmit="return ((e)=>{console.log(e) ; e.preventDefault()})(event)" -->
+        <form class="formSection" action="/teste">
+            <div class="inputDiv">
+                </span><sup class="mandatory"></sup> <br>
+                <span class="title">Você possui Logomarca?</span>
+                <br>
+                
+                <div id="temLogo" class="radio">
+                    <label class="radioContainer"><span class="name">Sim</span>
+                        <input type="radio" value="Sim" name="temLogo" required>
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="radioContainer"><span class="name">Não</span>
+                        <input type="radio" value="Não" name="temLogo">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            
+            
+            
+            <input id="teste" type="submit" value="Enviar">
+        </form>
+
+        </div>
+
+
+
+
+        <div class="mainContainer">
+            <h2 class="title">
+                Informações Sobre a Capa
+            </h2>
+            <p>
+                Texto exemplo Informações Capa.
+            </p>
+            
+            <br><hr>
+
+        
+        <form class="formSection" action="/teste">
+            <div class="inputDiv">
+                
+                <div class="inputDiv">
+                    </span>
+                    <span class="title">Dê uma olhada no nosso catalogo de capas: <br>
+                    <a class="link" href="http://catalogo.inovarpersonalizacao.com.br/">http://catalogo.inovarpersonalizacao.com.br/</a> <br>
+                    Caso queira algum modelo, informe abaixo o nome:</span>
+                    <br>
+                    <input id="modeloCapa" class="simpleInput" type="text" placeholder="Sua resposta">
+                </div>
+        
+                <hr>
+        
+                
+                <div class="inputDiv">
+                    </span><sup class="mandatory"></sup> <br>
+                    <span class="title">Caso tenha escolhido um dos nossos modelos de capa na pergunta anterior, escolha uma das opções abaixo:</span>
+                    <br>
+                    
+                    <div id="usarLogo" class="radio">
+                        <label class="radioContainer"><span class="name">Quero o modelo escolhido na pergunta anterior com o meu nome</span>
+                            <input type="radio" name="usarLogo" value="Quero o modelo escolhido na pergunta anterior com o meu nome">
+                            <span class="checkmark"></span>
+                        </label>
+
+                        <label class="radioContainer"><span class="name">Quero minha logomarca nas cores originais</span>
+                            <input type="radio" name="usarLogo" value="Quero minha logomarca nas cores originais">
+                            <span class="checkmark"></span>
+                        </label>
+        
+                        <label class="radioContainer"><span class="name">Quero minha logomarca no mesmo estilo do modelo que escolhi</span>
+                            <span class="checkmark"></span>
+                            <input type="radio" name="usarLogo" value="Quero minha logomarca no mesmo estilo do modelo que escolhi">
+                        </label>
+        
+                        <label class="radioContainer"><span class="name">Quero outra coisa na capa (por favor, descreva na proxima pergunta)</span>
+                            <input type="radio" name="usarLogo" value="Quero outra coisa na capa">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <hr>
+
+                
+                <div class="inputDiv">
+                </span>
+                <span class="title">Aqui um exemplo de como a capa vai ficar: </span>
+                <br>
+
+                <div class="capaPresentation">
+                    <img src="./assets/Images/capaApresentacao.jpg">
+                </div>
+
+                <br>
+                <span class="title">Descreva detalhadamente, como gostaria de personalizar a capa e a contracapa: </span>
+                <textarea id="detalhesCapaContraCapa" class="simpleInput largeInput" type="text" placeholder="Sua resposta"></textarea>
+            </div>
+            </div>
+            
+            
+            
+            <input id="teste" type="submit" value="Enviar">
+        </form>
+            
+        
+    </div>
+</body>
+
+<script>
+    // form stuff
+    var phoneField = document.getElementById('numero');
+    var lastPhoneValue;
+    phoneField.addEventListener('keydown', function(evt){
+
+        var phoneValue = phoneField.value;
+        var output;
+        phoneValue = phoneValue.replace("+55", "");
+        phoneValue = phoneValue.replace(/[^0-9]/g, '');
+
+        
+        if(evt.key == "Backspace") return; 
+
+        if(phoneField.value.length < 18){
+            var area = phoneValue.substr(0, 2);
+            var pre = phoneValue.substr(2, 4);
+            var tel = phoneValue.substr(6, 4);
+            if (area.length < 2) {
+                output = "+55 (" + area;
+            } else if (area.length == 2 && pre.length < 4) {
+                output = "+55 (" + area + ") " + "" + pre;
+            } else if (area.length == 2 && pre.length == 4) {
+                output = "+55 (" + area + ") " + "" + pre + "-"+tel;
+            }
+
+            phoneField.value = lastPhoneValue = output;
+
+        } else if(phoneField.value.length == 18) {
+            var area = phoneValue.substr(0, 2);
+            var pre = phoneValue.substr(2, 5);
+            var tel = phoneValue.substr(7, 4);
+            if (area.length < 2) {
+                output = "+55 (" + area;
+            } else if (area.length == 2 && pre.length < 5) {
+                output = "+55 (" + area + ") " + "" + pre;
+            } else if (area.length == 2 && pre.length == 5) {
+                output = "+55 (" + area + ") " + "" + pre + "-"+tel;
+            }
+
+            phoneField.value = lastPhoneValue = output;
+
+        } else {
+            phoneField.value = lastPhoneValue;
+        }
+    
+    });
+
+    Array.from(document.querySelectorAll('.simpleInput.largeInput')).forEach(e => {
+        e.addEventListener("input", (evt) => {
+            var element = evt.target; 
+            element.style.height = "5px";
+            element.style.height = (element.scrollHeight)+"px";
+        })
+    })
+</script>
+
+<script>
+    // object
+</script>
+</html>

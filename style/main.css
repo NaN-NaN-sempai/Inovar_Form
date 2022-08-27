@@ -1,0 +1,169 @@
+:root {
+    --bgColor: rgb(209, 196, 233);
+
+    --mainColor: white;
+    --secondColor: rgb(103 58 183);
+    --secondColorLighter: rgb(146, 104, 226);
+
+    --mainDark: black;
+    --secondDark: grey;
+
+    --mandatory: #d93025;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: var(--mainDark);
+    outline: none;
+}
+
+object {
+    pointer-events: none;
+}
+
+body {
+    background: var(--bgColor)
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--mainColor);
+    margin-bottom: 20px;
+    width: 100%;
+    border-bottom: 3px solid var(--secondColor);
+}
+
+
+header h1 {
+    text-align: center;
+    margin-right: 10px;
+    width: 100%;
+}
+
+header .logo {
+    height: 100%;
+    margin: 10px;
+    height: 70px;
+}
+
+
+.mainContainer {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--mainColor);
+    width: 80%;
+    border-top: 15px solid var(--secondColor);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.mainContainer .title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mainContainer hr {
+    border: none;
+    border-bottom: 7px solid var(--secondColor);
+    border-radius: 20px;
+}
+
+.formSection .inputDiv {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.formSection .mandatory::after {
+    content: "Obrigatório";
+}
+.formSection .mandatory {
+    color: var(--mandatory);
+}
+
+.formSection .simpleInput {
+    border: none;
+    border-bottom: 1px solid var(--secondDark);
+    padding-bottom: 5px;
+    font-size: 15px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 50%;
+    transition: border-bottom .2s linear;
+}
+
+.formSection .simpleInput:focus {
+    border-bottom: 5px solid var(--secondColorLighter);
+    border-radius: 5px;
+}
+
+.formSection .largeInput {
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+}
+
+
+.formSection .radio {
+    margin-top: 30px;
+}
+
+.formSection .link {
+    color: var(--secondColor);
+}
+
+
+
+.inputDiv .capaPresentation {
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    overflow: hidden;
+}
+
+.inputDiv .capaPresentation img {
+    width: 100%;
+    display:block;
+}
+
+
+
+
+::selection {
+    color: white;
+    background: var(--secondColor);
+}
+
+@media only screen and (max-width: 300px) {
+    .mainContainer {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    header h1 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 240px) {
+    header {
+        justify-content: center;
+    }
+    header h1 {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .mainContainer {
+        width: 1120px;
+    }
+}
