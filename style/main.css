@@ -52,6 +52,13 @@ header .logo {
     height: 70px;
 }
 
+.favorite::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f005";
+    color: orange;
+}
+
 
 .mainContainer {
     position: relative;
@@ -117,6 +124,7 @@ header .logo {
 
 .formSection .link {
     color: var(--secondColor);
+    overflow-wrap: break-word;
 }
 
 

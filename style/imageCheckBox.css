@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #eef5ff;
+}
+
+.imageCheckBoxWrapper {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    user-select: none;
+}
+
+.imageCheckBoxContainer {
+    height: 200px;
+    width: 200px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px var(--bgColor);
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: box-shadow 1s;
+}
+
+.imageCheckBoxContainer.selected {
+    box-shadow: 0 0 20px var(--secondColor);
+}
+
+.imageCheckBoxContainer input[type="checkbox"] {
+    -webkit-appearance: none;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    z-index: 10;
+}
+.imageCheckBoxContainer input[type="checkbox"]:after {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f111";
+    font-size: 18px;
+    color: var(--bgColor);
+    right: 10px;
+    top: -5px;
+    transition: color .2s;
+}
+.imageCheckBoxContainer input[type="checkbox"]:checked:after {
+    font-weight: 900;
+    content: "\f058";
+    color: var(--secondColor);
+}
+
+.imageCheckBoxContainer .labelSelector {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding-top: 20px;
+}
+
+.imageCheckBoxContainer img {
+    height: 60%;
+    margin: auto;
+    pointer-events: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+.imageCheckBoxContainer p {
+    overflow-wrap: break-word;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.imageCheckBoxContainer .name {
+    margin-top: 10px;
+}
+.imageCheckBoxContainer .price {
+    margin-top: 10px;
+}
+
+.imageCheckBoxContainer hr {
+    border-color: var(--bgColor);
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: border-color .2s;
+}
+
+.imageCheckBoxContainer.selected hr {
+    border-color: var(--secondColor);
+}
+
+.imageCheckBoxContainer label {
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 950px) {
+    .imageCheckBoxWrapper {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    .imageCheckBoxContainer {
+        height: 300px;
+        width: 300px;
+    }
+    .imageCheckBoxContainer input[type="checkbox"]:after {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .imageCheckBoxWrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+
+    .imageCheckBoxContainer .name {
+        margin-top: 0;
+    }
+    .imageCheckBoxContainer .price {
+        margin-top: 0;
+    }
+}
+@media screen and (max-width: 700px) {
+    .imageCheckBoxWrapper {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 50px;
+    }
+}
