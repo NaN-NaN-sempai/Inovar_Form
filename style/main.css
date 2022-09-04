@@ -81,6 +81,10 @@ header .logo {
     margin-bottom: 20px;
 }
 
+.mainContainer h3 {
+    text-align: center;
+}
+
 .mainContainer hr {
     border: none;
     border-bottom: 7px solid var(--secondColor);
