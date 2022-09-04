@@ -67,6 +67,16 @@
     content: "\f0fe";
 }
 
+/* only one and aditionals */
+.imageCheckBoxWrapper.additionals.selectOnlyOne
+.imageCheckBoxContainer input[type="checkbox"]:after {
+    content: "\f111";
+}
+.imageCheckBoxWrapper.additionals.selectOnlyOne
+.imageCheckBoxContainer input[type="checkbox"]:checked:after {
+    content: "\f055";
+}
+
 
 
 .imageCheckBoxContainer .labelSelector {
@@ -92,17 +102,14 @@
     transform: translateX(-50%);
     width: 100%;
     text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-.imageCheckBoxContainer .name {
-    margin-top: 10px;
-}
-.imageCheckBoxContainer .price {
-    margin-top: 10px;
-}
 
 .imageCheckBoxContainer hr {
     border-color: var(--bgColor);
+    border-width: 5px;
     margin-left: 10px;
     margin-right: 10px;
     transition: border-color .2s;

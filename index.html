@@ -10,6 +10,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/scrollBar.css">
     <link rel="stylesheet" href="./style/radio.css">
     <link rel="stylesheet" href="./style/imageCheckBox.css">
 
@@ -38,7 +39,7 @@
     </div>
     
 
-
+    <!-- Endereco -->
     <div class="mainContainer">
         <h2 class="title">
             Endereço e Contato
@@ -95,7 +96,7 @@
     </div>
     
 
-
+    <!-- Informações Adicionais -->
     <div class="mainContainer">
         <h2 class="title">
             Informações Adicionais
@@ -125,15 +126,25 @@
                     </label>
                 </div>
             </div>
+
+            
+
+            <div id="enviarLogo" class="inputDiv ignore">
+
+                <hr>
+                <br><br>
+                <span class="title">Envie todos os seus arquivos de identidade visual/logomarca (para obter uma melhor qualidade de imagem na capa, solicitamos envio da sua logo em formato PDF ou PNG).</span>
+                
+                <textarea id="endereco" class="simpleInput largeInput" type="text" placeholder="EM DESENVOLVIMENTO!" required></textarea> 
+            </div>
             
             <input id="teste" type="submit" value="Enviar">
         </form>
 
-        </div>
+    </div>
 
 
-
-
+    <!-- Capa -->
     <div class="mainContainer">
         <h2 class="title">
             Informações Sobre a Capa
@@ -148,12 +159,16 @@
         <form class="formSection" action="/teste">
                 
             <div class="inputDiv">
-                <span class="title">Dê uma olhada no nosso catalogo de capas: <br>
+                <span class="title">Dê uma olhada no nosso catálogo de capas, clique no link abaixo para abrir/fechar o catálogo aqui mesmo: <br>
                 </span>
-                <a class="link" href="http://catalogo.inovarpersonalizacao.com.br/">http://catalogo.inovarpersonalizacao.com.br/</a> <br>
+                <a id="openIframeCatalogo" class="link noOpen" href="https://catalogo.inovarpersonalizacao.com.br/">http://catalogo.inovarpersonalizacao.com.br/</a> <br>
                 Caso queira algum modelo, informe abaixo o nome:</span>
+                
                 <br>
-                <input id="modeloCapa" class="simpleInput" type="text" placeholder="Sua resposta">
+                <iframe id="iframeCatalogo" class="hidden ignore" src="https://catalogo.inovarpersonalizacao.com.br/" frameborder="0"></iframe>
+
+                <input id="modeloCapa" class="simpleInput iframeOpen" type="text" placeholder="Sua resposta">
+
             </div>
     
             <hr>
@@ -417,6 +432,7 @@
     </div>
 
 
+    <!-- Adicionais -->
     <div class="mainContainer">
         <h2 class="title">
             Adicionais
@@ -429,7 +445,6 @@
 
         
         <form class="formSection" action="/teste">
-
 
             <div class="inputDiv">
                 <span class="title">A primeira página pode ser especial com o Bolso Canguru (um bolsinho para guardar documentos e outras coisas) ou a Folha de Fotos (Uma página com algumas imagens da sua preferencia)
@@ -488,7 +503,7 @@
 
                         <label for="bolso-3">
                             <div class="labelSelector">
-                                <img src="./assets/Images/adicionais/bolso/bolsoEBolso.jpg"/>
+                                <img src="./assets/Images/adicionais/bolso/bolsoEFoto.jpg"/>
 
                                 <p class="name">
                                     Os Dois (Utilizaremos um arame diferente)
@@ -504,8 +519,6 @@
                     </div>
             
                 </div>
-
-
             </div>
 
             <div id="enviarFotos" class="inputDiv ignore">
@@ -514,17 +527,198 @@
                 <br><br>
                 <span class="title">Envie duas fotos para a folha destaque:</span>
                 
-                <textarea id="endereco" class="simpleInput largeInput" type="text" placeholder="Sua resposta" required></textarea> 
+                <textarea id="endereco" class="simpleInput largeInput" type="text" placeholder="EM DESENVOLVIMENTO!" required></textarea> 
             </div>
             
+
+            <hr>
+
+            <div class="inputDiv">
+                <span class="title">Alguns itens Adicionais para dar mais vida ao seu pedido:</span> <br><br>
+                <span>As opções com <span class="favorite"></span> são os acabamentos favoritos dos nossos clientes!</span>
+
+                
+                <div id="adicionais" class="imageCheckBoxWrapper additionals">
+
+                    <div class="imageCheckBoxContainer">
+                        <input type="checkbox" id="adicionais-1"  value="Luva protetora"/>
+
+                        <label for="adicionais-1">
+                            <div class="labelSelector">
+                                <img src="./assets/Images/adicionais/luvaProtetora.jpg"/>
+
+                                <p class="name">
+                                    Luva Protetora (protege a capa)
+                                </p>
+
+                                <hr>
+
+                                <p class="price">
+                                    (R$ 12,00)
+                                </p >
+                            </div>
+                        </label>
+                    </div>
+            
+                    
+                        
+                    <div class="imageCheckBoxContainer">
+                        <input type="checkbox" id="adicionais-2" value="Pingente"/>
+
+                        <label for="adicionais-2">
+                            <div class="labelSelector">
+                                <img src="./assets/Images/adicionais/pingente.jpg"/>
+
+                                <p class="name">
+                                    Pingente
+                                </p>
+
+                                <hr>
+
+                                <p class="price">
+                                    (R$ 6,00)
+                                </p >
+                            </div>
+                        </label>
+                    </div>
+            
+                    
+                        
+                    <div class="imageCheckBoxContainer">
+                        <input type="checkbox" id="adicionais-3" value="Abas Divisórias"/>
+
+                        <label for="adicionais-3">
+                            <div class="labelSelector">
+                                <img src="./assets/Images/adicionais/abasDivisorias.jpg"/>
+
+                                <p class="name">
+                                    <span class="favorite"></span> Abas Divisórias Adesivas
+                                </p>
+
+                                <hr>
+
+                                <p class="price">
+                                    (R$ 6,00)
+                                </p >
+                            </div>
+                        </label>
+                    </div>
+            
+                    
+                        
+                    <div class="imageCheckBoxContainer">
+                        <input type="checkbox" id="adicionais-4" value="Marcador de página"/>
+
+                        <label for="adicionais-4">
+                            <div class="labelSelector">
+                                <img src="./assets/Images/adicionais/marcador.gif"/>
+
+                                <p class="name">
+                                    <span class="favorite"></span> Marca página
+                                </p>
+
+                                <hr>
+
+                                <p class="price">
+                                    (R$ 5,00)
+                                </p >
+                            </div>
+                        </label>
+                    </div>
+            
+                </div>
+            </div>
+
+
+            
+            
+
+            <hr>
+
+            <div class="inputDiv">
+                <span class="title">Essas são as opções de Elásticos que temos:</span> <br><br>
+                <span>As opções com <span class="favorite"></span> são os acabamentos favoritos dos nossos clientes!</span>
+
+                
+                <div id="elastico" class="imageCheckBoxWrapper selectOnlyOne additionals">
+
+                    <div class="imageCheckBoxContainer">
+                        <input type="checkbox" id="elastico-1"  value="Preto ou Branco"/>
+
+                        <label for="elastico-1">
+                            <div class="labelSelector">
+                                <img src="./assets/Images/adicionais/elastico/pretoOuBranco.gif"/>
+
+                                <p class="name">
+                                    Preto ou Branco
+                                </p>
+
+                                <hr>
+
+                                <p class="price">
+                                    (R$ 12,00)
+                                </p >
+                            </div>
+                        </label>
+                    </div>
+            
+                    
+                        
+                    <div class="imageCheckBoxContainer">
+                        <input type="checkbox" id="elastico-2" value="Lilás, Vermelho, Verde claro, Verde escuro"/>
+
+                        <label for="elastico-2">
+                            <div class="labelSelector">
+                                <img src="./assets/Images/adicionais/elastico/elastico.jpg"/>
+
+                                <p class="name">
+                                    Lilás, Vermelho, Verde Claro, Verde Escuro
+                                </p>
+
+                                <hr>
+
+                                <p class="price">
+                                    (R$ 12,50)
+                                </p >
+                            </div>
+                        </label>
+                    </div>
+            
+                    
+                        
+                    <div class="imageCheckBoxContainer">
+                        <input type="checkbox" id="elastico-3" value="Com Glitter: Rosa, Azul Claro, Dourado"/>
+
+                        <label for="elastico-3">
+                            <div class="labelSelector">
+                                <img src="./assets/Images/adicionais/elastico/elasticoComGlitter.gif"/>
+
+                                <p class="name">
+                                    <span class="favorite"></span> Com Glitter: <br> Rosa, Azul Claro, Dourado
+                                </p>
+
+                                <hr>
+
+                                <p class="price">
+                                    (R$ 14,00)
+                                </p >
+                            </div>
+                        </label>
+                    </div>
+            
+                </div>
+            </div>
 
             <input id="teste" type="submit" value="Enviar">
         </form> 
     </div>
+
 </body>
 
 <script>
     // especifc stuff
+
+    // Bolso hide send file input
     Array.from(document.querySelectorAll("#bolso input")).forEach(e => {
         e.addEventListener("click", () => {
             var enviarFotos = document.querySelector("#enviarFotos");
@@ -537,12 +731,51 @@
             } else {
                 enviarFotos.classList.add("ignore");
                 input.required = false;
-                
             }
-
-            
         })
     });
+    //temLogo
+
+    // Logo hide send file input
+    Array.from(document.querySelectorAll("#temLogo input")).forEach(e => {
+        e.addEventListener("click", () => {
+            var enviarFotos = document.querySelector("#enviarLogo");
+            var input = document.querySelector("#enviarLogo .simpleInput");
+
+            if(e.value == "Sim"){
+                enviarFotos.classList.remove("ignore");
+                input.required = true;
+
+            } else {
+                enviarFotos.classList.add("ignore");
+                input.required = false;
+            }
+        })
+    });
+
+    // Catalogo smooth scroll
+    document.querySelector("#openIframeCatalogo").addEventListener("click", (evt) => {
+        evt.preventDefault();  
+        
+        var iframe = document.querySelector("#iframeCatalogo").classList;
+
+        clearTimeout(window.hideIframeTimeout);
+        
+        if(iframe.contains("hidden")){
+            iframe.remove("ignore");
+            window.hideIframeTimeout = setTimeout(() => {
+                iframe.remove("hidden");
+            }, 100);
+
+
+        } else {
+            iframe.add("hidden");
+            window.hideIframeTimeout = setTimeout(() => {
+                iframe.add("ignore");
+            }, 1000);
+        }
+    });
+    
 </script>
 
 <script>
@@ -638,7 +871,7 @@
         })
     });
 
-
+    
 </script>
 
 <script>

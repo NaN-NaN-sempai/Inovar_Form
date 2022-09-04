@@ -128,9 +128,23 @@ header .logo {
 }
 
 .formSection .link {
-    color: var(--secondColor);
-    overflow-wrap: break-word;
+    color: var(--secondColorLighter);
 }
+.formSection .link:hover {
+    color: var(--secondColor);
+}
+
+.formSection iframe {
+    width: 100%;
+    height: 80vh; 
+    border: 4px solid var(--secondColorLighter);
+    border-radius: 20px;
+    transition: height 1s;
+}
+.formSection iframe.hidden {
+    height: 0vh; 
+    pointer-events: none;
+} 
 
 
 
@@ -153,6 +167,7 @@ header .logo {
     color: white;
     background: var(--secondColor);
 }
+
 
 @media only screen and (max-width: 300px) {
     .mainContainer {
