@@ -16,7 +16,6 @@
     
     <!-- Icones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-
 </head>
 
 
@@ -135,76 +134,72 @@
 
 
 
-        <div class="mainContainer">
-            <h2 class="title">
-                Informações Sobre a Capa
-            </h2>
-            <p>
-                Texto exemplo Informações Capa.
-            </p>
-            
-            <br><hr>
+    <div class="mainContainer">
+        <h2 class="title">
+            Informações Sobre a Capa
+        </h2>
+        <p>
+            Texto exemplo Informações Capa.
+        </p>
+        
+        <br><hr>
 
         
         <form class="formSection" action="/teste">
+                
             <div class="inputDiv">
+                <span class="title">Dê uma olhada no nosso catalogo de capas: <br>
+                </span>
+                <a class="link" href="http://catalogo.inovarpersonalizacao.com.br/">http://catalogo.inovarpersonalizacao.com.br/</a> <br>
+                Caso queira algum modelo, informe abaixo o nome:</span>
+                <br>
+                <input id="modeloCapa" class="simpleInput" type="text" placeholder="Sua resposta">
+            </div>
+    
+            <hr>
+            
+            <div class="inputDiv">
+                <sup class="mandatory"></sup> <br>
+                <span class="title">Caso tenha escolhido um dos nossos modelos de capa na pergunta anterior, escolha uma das opções abaixo:</span>
+                <br>
                 
-                <div class="inputDiv">
-                    <span class="title">Dê uma olhada no nosso catalogo de capas: <br>
-                    </span>
-                    <a class="link" href="http://catalogo.inovarpersonalizacao.com.br/">http://catalogo.inovarpersonalizacao.com.br/</a> <br>
-                    Caso queira algum modelo, informe abaixo o nome:</span>
-                    <br>
-                    <input id="modeloCapa" class="simpleInput" type="text" placeholder="Sua resposta">
-                </div>
-        
-                <hr>
-        
-                
-                <div class="inputDiv">
-                    <sup class="mandatory"></sup> <br>
-                    <span class="title">Caso tenha escolhido um dos nossos modelos de capa na pergunta anterior, escolha uma das opções abaixo:</span>
-                    <br>
-                    
-                    <div id="usarLogo" class="radio">
-                        <label class="radioContainer"><span class="name">Quero o modelo escolhido na pergunta anterior com o meu nome</span>
-                            <input type="radio" name="usarLogo" value="Quero o modelo escolhido na pergunta anterior com o meu nome" required>
-                            <span class="checkmark"></span>
-                        </label>
+                <div id="usarLogo" class="radio">
+                    <label class="radioContainer"><span class="name">Quero o modelo escolhido na pergunta anterior com o meu nome</span>
+                        <input type="radio" name="usarLogo" value="Quero o modelo escolhido na pergunta anterior com o meu nome" required>
+                        <span class="checkmark"></span>
+                    </label>
 
-                        <label class="radioContainer"><span class="name">Quero minha logomarca nas cores originais</span>
-                            <input type="radio" name="usarLogo" value="Quero minha logomarca nas cores originais">
-                            <span class="checkmark"></span>
-                        </label>
-        
-                        <label class="radioContainer"><span class="name">Quero minha logomarca no mesmo estilo do modelo que escolhi</span>
-                            <input type="radio" name="usarLogo" value="Quero minha logomarca no mesmo estilo do modelo que escolhi">
-                            <span class="checkmark"></span>
-                        </label>
-        
-                        <label class="radioContainer"><span class="name">Quero outra coisa na capa (por favor, descreva na proxima pergunta)</span>
-                            <input type="radio" name="usarLogo" value="Quero outra coisa na capa">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
+                    <label class="radioContainer"><span class="name">Quero minha logomarca nas cores originais</span>
+                        <input type="radio" name="usarLogo" value="Quero minha logomarca nas cores originais">
+                        <span class="checkmark"></span>
+                    </label>
+    
+                    <label class="radioContainer"><span class="name">Quero minha logomarca no mesmo estilo do modelo que escolhi</span>
+                        <input type="radio" name="usarLogo" value="Quero minha logomarca no mesmo estilo do modelo que escolhi">
+                        <span class="checkmark"></span>
+                    </label>
+    
+                    <label class="radioContainer"><span class="name">Quero outra coisa na capa (por favor, descreva na proxima pergunta)</span>
+                        <input type="radio" name="usarLogo" value="Quero outra coisa na capa">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+
+            <hr>
+            
+            <div class="inputDiv">
+                <span class="title">Aqui um exemplo de como a capa vai ficar: </span>
+                <br>
+
+                <div class="capaPresentation">
+                    <img src="./assets/Images/capaApresentacao.jpg">
                 </div>
 
-                <hr>
-
-                
-                <div class="inputDiv">
-                    <span class="title">Aqui um exemplo de como a capa vai ficar: </span>
-                    <br>
-
-                    <div class="capaPresentation">
-                        <img src="./assets/Images/capaApresentacao.jpg">
-                    </div>
-
-                    <br>
-                    <sup class="mandatory"></sup> <br>
-                    <span class="title">Descreva detalhadamente, como gostaria de personalizar a capa e a contracapa: </span>
-                    <textarea id="detalhesCapaContraCapa" class="simpleInput largeInput" type="text" placeholder="Sua resposta" required></textarea>
-                </div>
+                <br>
+                <sup class="mandatory"></sup> <br>
+                <span class="title">Descreva detalhadamente, como gostaria de personalizar a capa e a contracapa: </span>
+                <textarea id="detalhesCapaContraCapa" class="simpleInput largeInput" type="text" placeholder="Sua resposta" required></textarea>
             </div>
 
             <hr>
@@ -412,21 +407,146 @@
                             </div>
                         </label>
                     </div>
+                </div>
+
+
+            </div>
+
+            <input id="teste" type="submit" value="Enviar">
+        </form> 
+    </div>
+
+
+    <div class="mainContainer">
+        <h2 class="title">
+            Adicionais
+        </h2>
+        <p>
+            Texto exemplo Adicionais.
+        </p>
+        
+        <br><hr>
+
+        
+        <form class="formSection" action="/teste">
+
+
+            <div class="inputDiv">
+                <span class="title">A primeira página pode ser especial com o Bolso Canguru (um bolsinho para guardar documentos e outras coisas) ou a Folha de Fotos (Uma página com algumas imagens da sua preferencia)
+                    <br><br>
+                    Escolha uma das opções abaixo:
+                </span>
+                
+                <div id="bolso" class="imageCheckBoxWrapper selectOnlyOne">
+
+                    <div class="imageCheckBoxContainer">
+                        <input type="checkbox" id="bolso-1"  value="Bolso canguru"/>
+
+                        <label for="bolso-1">
+                            <div class="labelSelector">
+                                <img src="./assets/Images/adicionais/bolso/bolso.jpg"/>
+
+                                <p class="name">
+                                    Bolso canguru
+                                </p>
+
+                                <hr>
+
+                                <p class="price">
+                                    (Gratuito)
+                                </p >
+                            </div>
+                        </label>
+                    </div>
+            
+                    
+                        
+                    <div class="imageCheckBoxContainer">
+                        <input type="checkbox" id="bolso-2" value="Folha Plástica de Fotos"/>
+
+                        <label for="bolso-2">
+                            <div class="labelSelector">
+                                <img src="./assets/Images/adicionais/bolso/fotos.jpg"/>
+
+                                <p class="name">
+                                    Folha Plástica de Fotos
+                                </p>
+
+                                <hr>
+
+                                <p class="price">
+                                    (R$ 5,00)
+                                </p >
+                            </div>
+                        </label>
+                    </div>
+            
+                    
+                        
+                    <div class="imageCheckBoxContainer">
+                        <input type="checkbox" id="bolso-3" value="Os Dois"/>
+
+                        <label for="bolso-3">
+                            <div class="labelSelector">
+                                <img src="./assets/Images/adicionais/bolso/bolsoEBolso.jpg"/>
+
+                                <p class="name">
+                                    Os Dois (Utilizaremos um arame diferente)
+                                </p>
+
+                                <hr>
+
+                                <p class="price">
+                                    (R$ 14,00)
+                                </p >
+                            </div>
+                        </label>
+                    </div>
             
                 </div>
+
+
             </div>
-        
+
+            <div id="enviarFotos" class="inputDiv ignore">
+
+                <hr>
+                <br><br>
+                <span class="title">Envie duas fotos para a folha destaque:</span>
+                
+                <textarea id="endereco" class="simpleInput largeInput" type="text" placeholder="Sua resposta" required></textarea> 
+            </div>
             
-            
+
             <input id="teste" type="submit" value="Enviar">
-        </form>
-            
-        
+        </form> 
     </div>
 </body>
 
 <script>
-    // form stuff
+    // especifc stuff
+    Array.from(document.querySelectorAll("#bolso input")).forEach(e => {
+        e.addEventListener("click", () => {
+            var enviarFotos = document.querySelector("#enviarFotos");
+            var input = document.querySelector("#enviarFotos .simpleInput");
+
+            if(["Folha Plástica de Fotos", "Os Dois"].includes(e.value)){
+                enviarFotos.classList.remove("ignore");
+                input.required = true;
+
+            } else {
+                enviarFotos.classList.add("ignore");
+                input.required = false;
+                
+            }
+
+            
+        })
+    });
+</script>
+
+<script>
+    // setup
 
     // phone handler
     var phoneField = document.getElementById('numero');
