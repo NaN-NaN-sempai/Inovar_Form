@@ -9,6 +9,7 @@
 
 
     <!-- Stylesheet -->
+    <link rel="stylesheet" href="./colors.css">
     <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="./style/scrollBar.css">
     <link rel="stylesheet" href="./style/radio.css">
@@ -17,6 +18,7 @@
     
     <!-- Icones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
 </head>
 
 
@@ -166,48 +168,53 @@
 
         
         <form class="formSection" action="/teste">
-                
+               
+            <!-- Modelo da capa -->
             <div class="inputDiv">
                 <h3>Modelo de Capa</h3><br>
 
                 <span class="title">Dê uma olhada no nosso catálogo de capas, clique no link abaixo para abrir/fechar o catálogo aqui mesmo: <br>
                 </span>
                 <a id="openIframeCatalogo" class="link noOpen" href="https://catalogo.inovarpersonalizacao.com.br/">http://catalogo.inovarpersonalizacao.com.br/</a> <br>
+                
+                <br>
+
+                <iframe id="iframeCatalogo" class="hidden ignore" src="https://catalogo.inovarpersonalizacao.com.br/" frameborder="0"></iframe>
+                
                 Caso queira algum modelo, informe abaixo o nome:</span>
                 
                 <br>
-                <iframe id="iframeCatalogo" class="hidden ignore" src="https://catalogo.inovarpersonalizacao.com.br/" frameborder="0"></iframe>
 
                 <input id="modeloCapa" class="simpleInput iframeOpen" type="text" placeholder="Sua resposta">
-
             </div>
     
             <hr>
             
+            <!-- Destaque da capa -->
             <div class="inputDiv">
                 <h3>Escolha o Destaque</h3><br>
 
                 <sup class="mandatory"></sup> <br>
-                <span class="title">Caso tenha escolhido um dos nossos modelos de capa na pergunta anterior, escolha uma das opções abaixo:</span>
+                <span class="title">O que você quer como destaque da capa?:</span>
                 <br>
                 
                 <div id="usarLogo" class="radio">
-                    <label class="radioContainer"><span class="name">Quero o modelo escolhido na pergunta anterior com o meu nome</span>
-                        <input type="radio" name="usarLogo" value="Quero o modelo escolhido na pergunta anterior com o meu nome" required>
+                    <label class="radioContainer"><span class="name">Quero o meu nome <i>(descreva como quer escrito na proxima pergunta)</i></span>
+                        <input type="radio" name="usarLogo" value="Quero o meu nome" required>
                         <span class="checkmark"></span>
                     </label>
 
-                    <label class="radioContainer"><span class="name">Quero minha logomarca nas cores originais</span>
+                    <label id="logoCorOriginial" class="radioContainer"><span class="name">Quero minha logomarca nas cores originais</span>
                         <input type="radio" name="usarLogo" value="Quero minha logomarca nas cores originais">
                         <span class="checkmark"></span>
                     </label>
     
-                    <label class="radioContainer"><span class="name">Quero minha logomarca no mesmo estilo do modelo que escolhi</span>
+                    <label id="logoCorModelo" class="radioContainer"><span class="name">Quero minha logomarca no mesmo estilo do modelo que escolhi</span>
                         <input type="radio" name="usarLogo" value="Quero minha logomarca no mesmo estilo do modelo que escolhi">
                         <span class="checkmark"></span>
                     </label>
     
-                    <label class="radioContainer"><span class="name">Quero outra coisa na capa (por favor, descreva na proxima pergunta)</span>
+                    <label class="radioContainer"><span class="name">Quero outra coisa na capa <i>(descreva na proxima pergunta)</i></span>
                         <input type="radio" name="usarLogo" value="Quero outra coisa na capa">
                         <span class="checkmark"></span>
                     </label>
@@ -216,6 +223,7 @@
 
             <hr>
             
+            <!-- Apresentação da Capa -->
             <div class="inputDiv">
                 <h3>Apresentação da Capa</h3><br>
                 <span class="title">Aqui um exemplo de como a capa vai ficar: </span>
@@ -233,6 +241,7 @@
 
             <hr>
 
+            <!-- Acabamento -->
             <div class="inputDiv">
                 <h3>Acabamentos</h3><br>
 
@@ -242,8 +251,8 @@
                 
                 <div id="acabamentos" class="imageCheckBoxWrapper selectOnlyOne">
             
-                    <div class="imageCheckBoxContainer">
-                        <input type="checkbox" id="acabamentos-1"  value="Brilho Comum"/>
+                    <div class="imageCheckBoxContainer selected">
+                        <input type="checkbox" id="acabamentos-1"  value="Brilho Comum" checked/>
 
                         <label for="acabamentos-1">
                             <div class="labelSelector">
@@ -442,6 +451,8 @@
 
             </div>
 
+
+
             <input id="teste" type="submit" value="Enviar">
         </form> 
     </div>
@@ -522,7 +533,7 @@
                                 <img src="./assets/Images/adicionais/bolso/bolsoEFoto.jpg"/>
 
                                 <p class="name">
-                                    Os Dois (Utilizaremos um arame diferente)
+                                    Os Dois (Temos que usar um arame diferente)
                                 </p>
 
                                 <hr>
@@ -537,6 +548,7 @@
                 </div>
             </div>
 
+
             <div id="enviarFotos" class="inputDiv ignore">
 
                 <hr>
@@ -547,6 +559,84 @@
                 <textarea id="endereco" class="simpleInput largeInput" type="text" placeholder="EM DESENVOLVIMENTO!" required></textarea> 
             </div>
             
+
+            <hr>
+
+            <div class="inputDiv">
+                <h3>Elásticos</h3><br>
+                <span class="title">Essas são as opções de Elásticos que temos:</span> <br><br>
+                <span>As opções com <span class="favorite"></span> são as favoritas dos nossos clientes!</span>
+
+                
+                <div id="elastico" class="imageCheckBoxWrapper selectOnlyOne additionals">
+
+                    <div class="imageCheckBoxContainer">
+                        <input type="checkbox" id="elastico-1"  value="Preto ou Branco"/>
+
+                        <label for="elastico-1">
+                            <div class="labelSelector">
+                                <img src="./assets/Images/adicionais/elastico/pretoOuBranco.gif"/>
+
+                                <p class="name">
+                                    Preto ou Branco
+                                </p>
+
+                                <hr>
+
+                                <p class="price">
+                                    (R$ 12,00)
+                                </p >
+                            </div>
+                        </label>
+                    </div>
+            
+                    
+                        
+                    <div class="imageCheckBoxContainer">
+                        <input type="checkbox" id="elastico-2" value="Lilás, Vermelho, Verde claro, Verde escuro"/>
+
+                        <label for="elastico-2">
+                            <div class="labelSelector">
+                                <img src="./assets/Images/adicionais/elastico/elastico.jpg"/>
+
+                                <p class="name">
+                                    Lilás, Vermelho, Verde Claro, Verde Escuro
+                                </p>
+
+                                <hr>
+
+                                <p class="price">
+                                    (R$ 12,50)
+                                </p >
+                            </div>
+                        </label>
+                    </div>
+            
+
+                        
+                    <div class="imageCheckBoxContainer">
+                        <input type="checkbox" id="elastico-3" value="Com Glitter: Rosa, Azul Claro, Dourado"/>
+
+                        <label for="elastico-3">
+                            <div class="labelSelector">
+                                <img src="./assets/Images/adicionais/elastico/elasticoComGlitter.gif"/>
+
+                                <p class="name">
+                                    <span class="favorite"></span> Com Glitter: <br> Rosa, Azul Claro, Dourado
+                                </p>
+
+                                <hr>
+
+                                <p class="price">
+                                    (R$ 14,00)
+                                </p >
+                            </div>
+                        </label>
+                    </div>
+            
+                </div>
+            </div>
+
 
             <hr>
 
@@ -647,87 +737,6 @@
                 </div>
             </div>
 
-
-            
-            
-
-            <hr>
-
-            <div class="inputDiv">
-                <h3>Elásticos</h3><br>
-                <span class="title">Essas são as opções de Elásticos que temos:</span> <br><br>
-                <span>As opções com <span class="favorite"></span> são as favoritas dos nossos clientes!</span>
-
-                
-                <div id="elastico" class="imageCheckBoxWrapper selectOnlyOne additionals">
-
-                    <div class="imageCheckBoxContainer">
-                        <input type="checkbox" id="elastico-1"  value="Preto ou Branco"/>
-
-                        <label for="elastico-1">
-                            <div class="labelSelector">
-                                <img src="./assets/Images/adicionais/elastico/pretoOuBranco.gif"/>
-
-                                <p class="name">
-                                    Preto ou Branco
-                                </p>
-
-                                <hr>
-
-                                <p class="price">
-                                    (R$ 12,00)
-                                </p >
-                            </div>
-                        </label>
-                    </div>
-            
-                    
-                        
-                    <div class="imageCheckBoxContainer">
-                        <input type="checkbox" id="elastico-2" value="Lilás, Vermelho, Verde claro, Verde escuro"/>
-
-                        <label for="elastico-2">
-                            <div class="labelSelector">
-                                <img src="./assets/Images/adicionais/elastico/elastico.jpg"/>
-
-                                <p class="name">
-                                    Lilás, Vermelho, Verde Claro, Verde Escuro
-                                </p>
-
-                                <hr>
-
-                                <p class="price">
-                                    (R$ 12,50)
-                                </p >
-                            </div>
-                        </label>
-                    </div>
-            
-                    
-                        
-                    <div class="imageCheckBoxContainer">
-                        <input type="checkbox" id="elastico-3" value="Com Glitter: Rosa, Azul Claro, Dourado"/>
-
-                        <label for="elastico-3">
-                            <div class="labelSelector">
-                                <img src="./assets/Images/adicionais/elastico/elasticoComGlitter.gif"/>
-
-                                <p class="name">
-                                    <span class="favorite"></span> Com Glitter: <br> Rosa, Azul Claro, Dourado
-                                </p>
-
-                                <hr>
-
-                                <p class="price">
-                                    (R$ 14,00)
-                                </p >
-                            </div>
-                        </label>
-                    </div>
-            
-                </div>
-            </div>
-
             <input id="teste" type="submit" value="Enviar">
         </form> 
     </div>
@@ -743,7 +752,7 @@
             var enviarFotos = document.querySelector("#enviarFotos");
             var input = document.querySelector("#enviarFotos .simpleInput");
 
-            if(["Folha Plástica de Fotos", "Os Dois"].includes(e.value)){
+            if(["Folha Plástica de Fotos", "Os Dois"].includes(e.value) && !e.parentNode.classList.contains("selected")){
                 enviarFotos.classList.remove("ignore");
                 input.required = true;
 
@@ -753,20 +762,33 @@
             }
         })
     });
-    //temLogo
 
     // Logo hide send file input
     Array.from(document.querySelectorAll("#temLogo input")).forEach(e => {
         e.addEventListener("click", () => {
-            var enviarFotos = document.querySelector("#enviarLogo");
+            var enviarLogoShow = [document.querySelector("#enviarLogo")];
+            var enviarLogoHide = [document.querySelector("#logoCorOriginial"), document.querySelector("#logoCorModelo")];
+
             var input = document.querySelector("#enviarLogo .simpleInput");
 
             if(e.value == "Sim"){
-                enviarFotos.classList.remove("ignore");
+                enviarLogoShow.forEach(el => el.classList.remove("ignore"));
+
+                enviarLogoHide.forEach(el => {
+                    el.classList.remove("ignore");
+                });
+
                 input.required = true;
 
             } else {
-                enviarFotos.classList.add("ignore");
+                enviarLogoShow.forEach(el => el.classList.add("ignore"));
+
+                enviarLogoHide.forEach(el => {
+                    el.classList.add("ignore");
+
+                    el.querySelector("input").checked = false;
+                });
+
                 input.required = false;
             }
         })
@@ -847,6 +869,7 @@
     
     });
 
+
     // textbox autoadjust
     Array.from(document.querySelectorAll('.simpleInput.largeInput')).forEach(e => {
         e.addEventListener("input", (evt) => {
@@ -874,8 +897,15 @@
     Array.from(document.querySelectorAll(".selectOnlyOne")).forEach(c => {
         Array.from(document.querySelectorAll("#"+c.id+" label")).forEach(e => {
 
-            e.addEventListener("click", () => {
+            e.addEventListener("click", (evt) => {
                 var selected = e.htmlFor;
+
+                var isMandatory = e.parentNode?.parentNode?.parentNode?.querySelector(".mandatory");
+
+                if(isMandatory && e.parentNode.classList.contains("selected")){
+                    evt.preventDefault();
+                    return
+                }
                 
                 Array.from(document.querySelectorAll("#"+e.parentNode.parentNode.id+" input")).forEach(i => {
                     if(i.id != selected){ 
@@ -889,11 +919,31 @@
             
         })
     });
-
-    
 </script>
 
 <script>
-    // object
+    // gather info to object
+
+    var gatherInfo = () => {
+        document.querySelectorAll(".inputDiv").forEach(e => {
+
+        var inputType;
+        if(inputType = e.querySelector(".simpleInput")){
+
+            console.log(inputType.value)
+            
+        } else if(inputType = e.querySelector(".radio input:checked")){
+
+
+            console.log(inputType.value)
+            
+        } else if(inputType = e.querySelector(".imageCheckBoxWrapper")){
+
+            console.log(inputType.querySelectorAll(".selected"))
+            
+        }
+
+    })
+    }
 </script>
 </html>

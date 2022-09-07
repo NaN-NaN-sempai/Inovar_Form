@@ -1,0 +1,12 @@
+:root {
+    --bgColor: rgb(209, 196, 233);
+
+    --mainColor: #ffffff;
+    --secondColor: rgb(103 58 183);
+    --secondColorLighter: rgb(146, 104, 226);
+
+    --mainDark: black;
+    --secondDark: grey;
+
+    --mandatory: #d93025;
+}

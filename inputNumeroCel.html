@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./colors.css">
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/scrollBar.css">
+    <link rel="stylesheet" href="./style/radio.css">
+    <link rel="stylesheet" href="./style/imageCheckBox.css">
+</head>
+<body>
+    <!-- Endereco -->
+    <div class="mainContainer">
+        <h2 class="title">
+            Endereço e Contato
+        </h2>
+        <hr>
+
+        <!-- onsubmit="return ((e)=>{console.log(e) ; e.preventDefault()})(event)" -->
+        <form class="formSection" action="/teste">
+
+            <div class="inputDiv">
+                <span class="title">TESTE INPUT HIDDEN (not hidden)
+                <br>
+                <br>    
+
+                <label for="numero">
+                    <p id="teste" class="simpleInput empty">+55 (00) 90000-0000</p>
+                </label>
+
+                <br>
+        
+                <input id="numero" class="simpleInput" type="tel" maxlength="11" placeholder="+55 (00) 90000-0000" 
+                
+                
+
+                >
+
+                <br><br>
+        
+                <label for="ignoreTextCorrection2">
+                    <input type="checkbox" id="ignoreTextCorrection2">
+                    <span>Ignorar auto-correção</span>
+                </label> 
+
+                <br><br>
+
+
+
+                <br><hr><br>  <br>
+                <span class="title">TESTE INPUT HIDDEN
+                <br> 
+
+                <label for="numero2" style="position: relative;">
+                    <input required id="numero2" type="tel" maxlength="11" placeholder="+55 (00) 90000-0000" 
+                    style="
+                        width: 0;
+                        overflow: hidden;
+                        height: 0;
+                        display: inline;
+                        
+                        position: absolute;
+                        top: 22px;
+                        left: 50%;
+                        
+                        pointer-events: none;
+                        opacity: 0;
+                    "
+                    >
+                    <p id="teste2" class="simpleInput empty">+55 (00) 90000-0000</p>
+                </label>
+
+                <br><br>
+        
+                <label for="ignoreTextCorrection">
+                    <input type="checkbox" id="ignoreTextCorrection">
+                    <span style="font-size: 13px">Ignorar auto-correção</span>
+                </label> 
+
+            </div>
+
+
+
+            <hr><br>
+
+
+
+            <br><hr><br>  <br>
+            <span class="title">arquivos com pré-visualização (funciona com Imagens e PDF)
+            <br> <br>
+
+            <input id="trere" type="file"  multiple="multiple"><br>
+            <div id="insertImages"></div>
+            <br><br>
+
+            <input id="teste" type="submit" value="Enviar">
+        </form>
+    </div>
+    
+</body>
+
+<style>
+    .simpleInput {
+        position: relative;
+        text-align: left;
+        display: inline-block;
+    }
+
+    .simpleInput.empty {
+        color: #757575;
+    }
+
+    .simpleInput.inputSelected {
+        border-bottom: 5px solid var(--secondColorLighter);
+        border-radius: 5px;
+    }
+</style>
+
+<!-- input file -->
+<script>
+
+function readURL(input) {
+
+    console.log(input.files);
+    var insert = document.querySelector("#insertImages")
+
+    Array.from(input.files)?.forEach(file => {
+
+        console.log(file.type);
+
+        if(file.type == "application/pdf"){
+
+            var embed = document.createElement("embed");
+            embed.style.height="100px"
+            embed.style.width="75px"
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                embed.src = e.target.result;
+            }
+
+            insert.append(embed)
+
+            reader.readAsDataURL(file);
+
+
+
+        } else {
+            var image = document.createElement("img");
+            image.style.height = "100px"
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                image.src = e.target.result;
+            }
+            
+            image.onload = function() {
+                insert.append(image)
+            };
+            image.onerror = function() {
+                alert('Invalid image');
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+    })
+}
+var ipt = document.querySelector("#trere")
+
+ipt.addEventListener("input", () => readURL(ipt))
+
+</script>
+
+<script>
+    
+    var inputA = document.getElementById("numero");
+    var outputA = document.getElementById("teste");
+
+
+    var exec = (input, output, ignoreCheckMark) => {
+
+        var doNumberPatern = () => {
+            var output2;
+
+            if(!ignoreCheckMark?.checked){
+                if(input.value.length < 11){
+                    var area = input.value.substr(0, 2);
+                    var pre = input.value.substr(2, 4);
+                    var tel = input.value.substr(6, 4);
+                    if (area.length < 2) {
+                        output2 = "+55 (" + area;
+                    } else if (area.length == 2 && pre.length < 4) {
+                        output2 = "+55 (" + area + ") " + "" + pre;
+                    } else if (area.length == 2 && pre.length == 4) {
+                        output2 = "+55 (" + area + ") " + "" + pre + "-"+tel;
+                    }
+
+                    output.innerHTML = output2;
+
+                } else if(input.value.length >= 11){
+                    var area = input.value.substr(0, 2);
+                    var pre = input.value.substr(2, 5);
+                    var tel = input.value.substr(7, 4);
+                    if (area.length < 2) {
+                        output2 = "+55 (" + area;
+                    } else if (area.length == 2 && pre.length < 5) {
+                        output2 = "+55 (" + area + ") " + "" + pre;
+                    } else if (area.length == 2 && pre.length == 5) {
+                        output2 = "+55 (" + area + ") " + "" + pre + "-"+tel;
+                    }
+
+                    output.innerHTML = output2;
+                }
+                
+                input.value = input.value.slice(0, 11);
+                
+            } else {
+                output.innerHTML = input.value;
+            }
+
+
+            if(input.value) {
+                output.classList.remove("empty");
+            } else {
+                output.classList.add("empty");
+                output.innerHTML = input.placeholder;
+            }
+        }
+
+
+        input.addEventListener("focus", () => {
+            output.classList.add("inputSelected");
+        });
+
+        input.addEventListener("blur", () => {
+            output.classList.remove("inputSelected");
+        });
+        
+
+        ignoreCheckMark?.addEventListener("input", () => {
+            if(ignoreCheckMark?.checked){
+                input.maxLength = 30;
+            } else {
+                input.maxLength = 11;
+            }
+
+            doNumberPatern();
+            
+            input.focus();
+        });
+
+
+        var lastPhoneValue;
+        input.addEventListener('input', function(evt){
+
+            input.value = input.value.replace(/[^0-9]/g, '');
+
+            doNumberPatern();
+        });
+
+    }
+
+
+    exec(inputA, outputA, ignoreTextCorrection2);
+
+    var inputB = document.getElementById("numero2");
+    var outputB = document.getElementById("teste2");
+
+    exec(inputB, outputB, ignoreTextCorrection);
+</script>
+</html>
