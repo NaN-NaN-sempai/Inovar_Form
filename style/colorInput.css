@@ -1,0 +1,80 @@
+.inputColorContainer {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+
+.inputColor{
+    background: var(--mainColor);
+    border: solid 3px var(--secondColor);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.inputColor .info{
+    padding-bottom: 3px;
+    padding-top: 0px;
+    padding-left: 3px;
+    padding-right: 15px;
+    cursor: pointer;
+    user-select: none;
+    color: var(--mainDark);
+}
+
+.inputColor h1{
+    margin: 0;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.inputColor h2{
+    font-weight: normal;
+    font-size: 17px;
+    margin: 0;
+}
+
+.inputColor hr {
+    border-width: 3px;
+    margin-right: -12px
+}
+
+.inputColor .outputColor {
+    margin-top: 5px;
+    user-select: all;
+    text-transform: uppercase;
+}
+
+input[type="color"] {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    height: 85px;
+    padding: 0;
+    width: 100px;
+    border-bottom: 3px solid var(--secondColor);
+}
+
+::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+::-webkit-color-swatch{
+    border: 0;
+    border-radius: 0;
+}
+
+::-moz-color-swatch,
+::-moz-focus-inner{
+    border: 0;
+}
+
+::-moz-focus-inner{
+    padding: 0;
+}

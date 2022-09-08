@@ -42,7 +42,7 @@ header .logo {
     display: none !important;
 }
 
-.favorite::after {
+.favorite .insertIcon::after, span.favorite::after {
     font-family: "Font Awesome 5 Free";
     font-weight: 400;
     content: "\f005";
@@ -98,6 +98,7 @@ header .logo {
     margin-top: 30px;
     margin-bottom: 10px;
     width: 50%;
+    background: var(--mainColor);
     transition: border-bottom .2s linear;
 }
 
@@ -105,6 +106,38 @@ header .logo {
     border-bottom: 5px solid var(--secondColorLighter);
     border-radius: 5px;
 }
+
+.formSection p.simpleInput {
+    position: relative;
+    text-align: left;
+    display: inline-block;
+}
+
+.formSection p.simpleInput.empty {
+    color: #757575;
+}
+
+.formSection p.simpleInput.inputSelected {
+    border-bottom: 5px solid var(--secondColorLighter);
+    border-radius: 5px;
+}
+
+
+.formSection .hiddenNotIgnore {
+    width: 0;
+    overflow: hidden;
+    height: 0;
+    display: inline;
+    
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    
+    pointer-events: none;
+    opacity: 0;
+}
+
+
 
 .formSection .largeInput {
     width: 100%;
@@ -138,11 +171,64 @@ header .logo {
 } 
 
 
+.checkboxForText {
+    display: grid;
+    grid-template-columns: 25px auto;
+    justify-content: start;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.formSection .simpleCheckbox {
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: var(--bgColor);
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 2px;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    transition: background .2s, color .2s;
+    cursor: pointer;
+}
+
+.formSection .checkboxForText span {
+    font-size: 13px;
+}
+  
+.formSection .simpleCheckbox::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--secondColor);
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.formSection .simpleCheckbox:hover {
+    background: var(--bgColor);
+}
+
+.formSection .simpleCheckbox:checked {
+    color: var(--secondColor);
+}
+
+.formSection .simpleCheckbox:checked::before {
+    transform: scale(1);
+}
+
+
 
 .inputDiv .capaPresentation {
     margin: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px var(--mainDark);
     overflow: hidden;
 }
 
