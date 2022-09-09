@@ -214,42 +214,42 @@
                     <br><br>
                     <h3>Cores Para a Capa</h3><br>
 
-                    <span class="title">Caso queira, informe as cores que deseja usar:</span>
+                    <span class="title">Caso queira, informe até 3 cores que deseja usar:</span>
                     <br><br>
                     <i>(toque no espaço acima dos textos para escolher uma cor)</i>
                     <br><br><br>
 
                     <div class="inputColorContainer">
                         <div class="inputColor">
-                            <input type="color" id="capaColor1" value="#FFFFFF">
-                            <label for="capaColor1">
+                            <input type="color" id="capaColor-1" value="#FFFFFF">
+                            <label for="capaColor-1">
                                 <div class="info">
-                                    <h1>Insira</h1>
-                                    <h2>uma Cor</h2>
+                                    <h2>Cor:</h2>
+                                    <h1 class="name">Insira</h1>
                                     <hr>
                                     <h2 class="outputColor"></h2>
                                 </div>
                             </label>
                         </div>
-                        
+
                         <div class="inputColor">
-                            <input type="color" id="capaColor2" value="#FFFFFF">
-                            <label for="capaColor2">
+                            <input type="color" id="capaColor-2" value="#FFFFFF">
+                            <label for="capaColor-2">
                                 <div class="info">
-                                    <h1>Insira</h1>
-                                    <h2>uma Cor</h2>
+                                    <h2>Cor:</h2>
+                                    <h1 class="name">Insira</h1>
                                     <hr>
                                     <h2 class="outputColor"></h2>
                                 </div>
                             </label>
                         </div>
-                        
+
                         <div class="inputColor">
-                            <input type="color" id="capaColor1" value="#FFFFFF">
-                            <label for="capaColor1">
+                            <input type="color" id="capaColor-3" value="#FFFFFF">
+                            <label for="capaColor-3">
                                 <div class="info">
-                                    <h1>Insira</h1>
-                                    <h2>uma Cor</h2>
+                                    <h2>Cor:</h2>
+                                    <h1 class="name">Insira</h1>
                                     <hr>
                                     <h2 class="outputColor"></h2>
                                 </div>
@@ -451,6 +451,8 @@
 <script src="./lists/paginaDestaque.js"></script>
 <script src="./lists/elasticos.js"></script>
 <script src="./lists/adicionais.js"></script>
+
+<script src="./scripts/nameThatColor.js"></script>
 
 
 
@@ -695,12 +697,15 @@
     document.querySelectorAll(".inputColor").forEach(e => {
         var input = e.querySelector("input");
         var output = e.querySelector(".outputColor");
+        var name = e.querySelector(".name");
 
         output.innerHTML = input.value;
+        console.log(nameThatColor(input.value));
+        name.innerHTML = nameThatColor(input.value).name;
 
         e.addEventListener("input", () => {
-
-        output.innerHTML = input.value;
+            output.innerHTML = input.value;
+            name.innerHTML = nameThatColor(input.value).name;
         })
     });
 </script>

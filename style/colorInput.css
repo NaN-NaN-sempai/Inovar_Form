@@ -13,51 +13,65 @@
     border: solid 3px var(--secondColor);
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
+    padding-bottom: 25px;
 }
 
 .inputColor .info{
     padding-bottom: 3px;
     padding-top: 0px;
     padding-left: 3px;
-    padding-right: 15px;
+    padding-right: 3px;
     cursor: pointer;
     user-select: none;
     color: var(--mainDark);
 }
 
-.inputColor h1{
-    margin: 0;
-    font-size: 17px;
+.inputColor .name{
+    font-size: 15px;
+    max-width: 110px;
     text-transform: uppercase;
+    user-select: all;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
 
 .inputColor h2{
     font-weight: normal;
     font-size: 17px;
-    margin: 0;
 }
 
 .inputColor hr {
     border-width: 3px;
-    margin-right: -12px
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 23px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
 }
 
 .inputColor .outputColor {
     margin-top: 5px;
     user-select: all;
     text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
 }
 
-input[type="color"] {
+.inputColor input[type="color"] {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
     background: none;
-    border: 0;
+    border: none;
     cursor: pointer;
     height: 85px;
     padding: 0;
-    width: 100px;
+    width: 120px;
     border-bottom: 3px solid var(--secondColor);
 }
 
@@ -66,13 +80,12 @@ input[type="color"] {
 }
 
 ::-webkit-color-swatch{
-    border: 0;
     border-radius: 0;
 }
 
 ::-moz-color-swatch,
 ::-moz-focus-inner{
-    border: 0;
+    border: none;
 }
 
 ::-moz-focus-inner{
