@@ -1,4 +1,4 @@
-var colorNameList = [
+var nameThatColorList = [
     [
         "4C4F56",
         "Abbey",
@@ -91,7 +91,7 @@ var colorNameList = [
     ],
     [
         "F0F8FF",
-        "Alice Blue",
+        "Azul alice",
         240,
         248,
         255,
@@ -101,7 +101,7 @@ var colorNameList = [
     ],
     [
         "E32636",
-        "Alizarin Crimson",
+        "Alizarina",
         227,
         38,
         54,
@@ -191,7 +191,7 @@ var colorNameList = [
     ],
     [
         "FFBF00",
-        "Amber",
+        "Âmbar",
         255,
         191,
         0,
@@ -211,7 +211,7 @@ var colorNameList = [
     ],
     [
         "9966CC",
-        "Amethyst",
+        "Ametista",
         153,
         102,
         204,
@@ -421,7 +421,7 @@ var colorNameList = [
     ],
     [
         "7FFFD4",
-        "Aquamarine",
+        "Água-marinha",
         127,
         255,
         212,
@@ -481,7 +481,7 @@ var colorNameList = [
     ],
     [
         "7BA05B",
-        "Asparagus",
+        "Aspargo",
         123,
         160,
         91,
@@ -671,7 +671,7 @@ var colorNameList = [
     ],
     [
         "007FFF",
-        "Azure Radiance",
+        "Azul celeste brilhante",
         0,
         127,
         255,
@@ -681,7 +681,7 @@ var colorNameList = [
     ],
     [
         "E0FFFF",
-        "Baby Blue",
+        "Ciano claro",
         224,
         255,
         255,
@@ -901,7 +901,7 @@ var colorNameList = [
     ],
     [
         "F5F5DC",
-        "Beige",
+        "Bege",
         245,
         245,
         220,
@@ -1031,7 +1031,7 @@ var colorNameList = [
     ],
     [
         "3D2B1F",
-        "Bistre",
+        "Fuligem",
         61,
         43,
         31,
@@ -1081,7 +1081,7 @@ var colorNameList = [
     ],
     [
         "000000",
-        "Black",
+        "Preto",
         0,
         0,
         0,
@@ -1271,7 +1271,7 @@ var colorNameList = [
     ],
     [
         "0000FF",
-        "Blue",
+        "Azul",
         0,
         0,
         255,
@@ -1911,7 +1911,7 @@ var colorNameList = [
     ],
     [
         "F0DC82",
-        "Buff",
+        "Couro",
         240,
         220,
         130,
@@ -1961,7 +1961,7 @@ var colorNameList = [
     ],
     [
         "900020",
-        "Burgundy",
+        "Borgonha",
         144,
         0,
         32,
@@ -2241,7 +2241,7 @@ var colorNameList = [
     ],
     [
         "78866B",
-        "Camouflage Green",
+        "Verde militar",
         120,
         134,
         107,
@@ -2281,7 +2281,7 @@ var colorNameList = [
     ],
     [
         "FBEC5D",
-        "Candy Corn",
+        "Milho",
         251,
         236,
         93,
@@ -2441,7 +2441,7 @@ var colorNameList = [
     ],
     [
         "960018",
-        "Carmine",
+        "Carmim carnáceo",
         150,
         0,
         24,
@@ -2491,7 +2491,7 @@ var colorNameList = [
     ],
     [
         "ED9121",
-        "Carrot Orange",
+        "Cenoura",
         237,
         145,
         33,
@@ -2691,7 +2691,7 @@ var colorNameList = [
     ],
     [
         "DE3163",
-        "Cerise Red",
+        "Cereja",
         222,
         49,
         99,
@@ -2841,7 +2841,7 @@ var colorNameList = [
     ],
     [
         "7FFF00",
-        "Chartreuse",
+        "Verde Paris",
         127,
         255,
         0,
@@ -2971,7 +2971,7 @@ var colorNameList = [
     ],
     [
         "CD5C5C",
-        "Chestnut Rose",
+        "Vermelho indiano",
         205,
         92,
         92,
@@ -3321,7 +3321,7 @@ var colorNameList = [
     ],
     [
         "0047AB",
-        "Cobalt",
+        "Azul cobalto",
         0,
         71,
         171,
@@ -3541,7 +3541,7 @@ var colorNameList = [
     ],
     [
         "B87333",
-        "Copper",
+        "Cobre",
         184,
         115,
         51,
@@ -3701,7 +3701,7 @@ var colorNameList = [
     ],
     [
         "6495ED",
-        "Cornflower Blue",
+        "Azul flor de milho",
         100,
         149,
         237,
@@ -3831,7 +3831,7 @@ var colorNameList = [
     ],
     [
         "FFFDD0",
-        "Cream",
+        "Creme",
         255,
         253,
         208,
@@ -3881,7 +3881,7 @@ var colorNameList = [
     ],
     [
         "DC143C",
-        "Crimson",
+        "Carmesim",
         220,
         20,
         60,
@@ -4001,7 +4001,7 @@ var colorNameList = [
     ],
     [
         "00FFFF",
-        "Cyan / Aqua",
+        "Água",
         0,
         255,
         255,
@@ -4451,7 +4451,7 @@ var colorNameList = [
     ],
     [
         "1E90FF",
-        "Dodger Blue",
+        "Azul furtivo",
         30,
         144,
         255,
@@ -4891,7 +4891,7 @@ var colorNameList = [
     ],
     [
         "50C878",
-        "Emerald",
+        "Esmeralda",
         80,
         200,
         120,
@@ -4901,7 +4901,7 @@ var colorNameList = [
     ],
     [
         "6C3082",
-        "Eminence",
+        "Eminência",
         108,
         48,
         130,
@@ -5341,7 +5341,7 @@ var colorNameList = [
     ],
     [
         "A2006D",
-        "Flirt",
+        "Flerte",
         162,
         0,
         109,
@@ -5401,7 +5401,7 @@ var colorNameList = [
     ],
     [
         "228B22",
-        "Forest Green",
+        "Verde floresta",
         34,
         139,
         34,
@@ -5821,7 +5821,7 @@ var colorNameList = [
     ],
     [
         "FFD700",
-        "Gold",
+        "Ouro",
         255,
         215,
         0,
@@ -5901,7 +5901,7 @@ var colorNameList = [
     ],
     [
         "DAA520",
-        "Golden Grass",
+        "Dourado",
         218,
         165,
         32,
@@ -6101,7 +6101,7 @@ var colorNameList = [
     ],
     [
         "808080",
-        "Gray",
+        "Cinza",
         128,
         128,
         128,
@@ -6171,7 +6171,7 @@ var colorNameList = [
     ],
     [
         "00FF00",
-        "Green",
+        "Lima",
         0,
         255,
         0,
@@ -6291,7 +6291,7 @@ var colorNameList = [
     ],
     [
         "ADFF2F",
-        "Green Yellow",
+        "Amarelo esverdeado",
         173,
         255,
         47,
@@ -6591,7 +6591,7 @@ var colorNameList = [
     ],
     [
         "DF73FF",
-        "Heliotrope",
+        "Heliotrópio",
         223,
         115,
         255,
@@ -6771,7 +6771,7 @@ var colorNameList = [
     ],
     [
         "F400A1",
-        "Hollywood Cerise",
+        "Cereja Hollywood",
         244,
         0,
         161,
@@ -6831,7 +6831,7 @@ var colorNameList = [
     ],
     [
         "D2691E",
-        "Hot Cinnamon",
+        "Chocolate",
         210,
         105,
         30,
@@ -6841,7 +6841,7 @@ var colorNameList = [
     ],
     [
         "FF69B4",
-        "Hot Pink",
+        "Rosa forte",
         255,
         105,
         180,
@@ -7061,7 +7061,7 @@ var colorNameList = [
     ],
     [
         "FFFFF0",
-        "Ivory",
+        "Marfim",
         255,
         255,
         240,
@@ -7451,7 +7451,7 @@ var colorNameList = [
     ],
     [
         "F0E68C",
-        "Khaki",
+        "Caqui",
         240,
         230,
         140,
@@ -7651,7 +7651,7 @@ var colorNameList = [
     ],
     [
         "EE82EE",
-        "Lavender Magenta",
+        "Violeta",
         238,
         130,
         238,
@@ -7691,7 +7691,7 @@ var colorNameList = [
     ],
     [
         "FFF0F5",
-        "Lavender blush",
+        "Lavanda avermelhada",
         255,
         240,
         245,
@@ -7751,7 +7751,7 @@ var colorNameList = [
     ],
     [
         "FDD5B1",
-        "Light Apricot",
+        "Feldspato",
         253,
         213,
         177,
@@ -7791,7 +7791,7 @@ var colorNameList = [
     ],
     [
         "C8A2C8",
-        "Lilac",
+        "Lilás",
         200,
         162,
         200,
@@ -7891,7 +7891,7 @@ var colorNameList = [
     ],
     [
         "FAF0E6",
-        "Linen",
+        "Linho",
         250,
         240,
         230,
@@ -8161,7 +8161,7 @@ var colorNameList = [
     ],
     [
         "FF00FF",
-        "Magenta / Fuchsia",
+        "Fúchsia",
         255,
         0,
         255,
@@ -8421,7 +8421,7 @@ var colorNameList = [
     ],
     [
         "800000",
-        "Maroon",
+        "Bordô",
         128,
         0,
         0,
@@ -8531,7 +8531,7 @@ var colorNameList = [
     ],
     [
         "E0B0FF",
-        "Mauve",
+        "Malva",
         224,
         176,
         255,
@@ -8571,7 +8571,7 @@ var colorNameList = [
     ],
     [
         "9370DB",
-        "Medium Purple",
+        "Púrpura média",
         147,
         112,
         219,
@@ -9221,7 +9221,7 @@ var colorNameList = [
     ],
     [
         "FFDB58",
-        "Mustard",
+        "Mostarda",
         255,
         219,
         88,
@@ -9301,7 +9301,7 @@ var colorNameList = [
     ],
     [
         "FFDEAD",
-        "Navajo White",
+        "Branco navajo",
         255,
         222,
         173,
@@ -9311,7 +9311,7 @@ var colorNameList = [
     ],
     [
         "000080",
-        "Navy Blue",
+        "Naval",
         0,
         0,
         128,
@@ -9541,7 +9541,7 @@ var colorNameList = [
     ],
     [
         "CC7722",
-        "Ochre",
+        "Ocre",
         204,
         119,
         34,
@@ -9611,7 +9611,7 @@ var colorNameList = [
     ],
     [
         "FDF5E6",
-        "Old Lace",
+        "Renda antiga",
         253,
         245,
         230,
@@ -9641,7 +9641,7 @@ var colorNameList = [
     ],
     [
         "808000",
-        "Olive",
+        "Oliva",
         128,
         128,
         0,
@@ -9651,7 +9651,7 @@ var colorNameList = [
     ],
     [
         "6B8E23",
-        "Olive Drab",
+        "Oliva parda",
         107,
         142,
         35,
@@ -9791,7 +9791,7 @@ var colorNameList = [
     ],
     [
         "DA70D6",
-        "Orchid",
+        "Orquídea",
         218,
         112,
         214,
@@ -10111,7 +10111,7 @@ var colorNameList = [
     ],
     [
         "FFEFD5",
-        "Papaya Whip",
+        "Mamão batido",
         255,
         239,
         213,
@@ -10611,7 +10611,7 @@ var colorNameList = [
     ],
     [
         "4B0082",
-        "Pigment Indigo",
+        "Índigo",
         75,
         0,
         130,
@@ -10971,7 +10971,7 @@ var colorNameList = [
     ],
     [
         "B0E0E6",
-        "Powder Blue",
+        "Azul pólvora",
         176,
         224,
         230,
@@ -11351,7 +11351,7 @@ var colorNameList = [
     ],
     [
         "FF0000",
-        "Red",
+        "Vermelho",
         255,
         0,
         0,
@@ -11451,7 +11451,7 @@ var colorNameList = [
     ],
     [
         "C71585",
-        "Red Violet",
+        "Vermelho violeta médio",
         199,
         21,
         133,
@@ -11791,7 +11791,7 @@ var colorNameList = [
     ],
     [
         "FF007F",
-        "Rose",
+        "Rosa brilhante",
         255,
         0,
         127,
@@ -11951,7 +11951,7 @@ var colorNameList = [
     ],
     [
         "B7410E",
-        "Rust",
+        "Ferrugem",
         183,
         65,
         14,
@@ -12001,7 +12001,7 @@ var colorNameList = [
     ],
     [
         "F4C430",
-        "Saffron",
+        "Açafrão",
         244,
         196,
         48,
@@ -12211,7 +12211,7 @@ var colorNameList = [
     ],
     [
         "F4A460",
-        "Sandy brown",
+        "Marrom amarelado",
         244,
         164,
         96,
@@ -12341,7 +12341,7 @@ var colorNameList = [
     ],
     [
         "FF2400",
-        "Scarlet",
+        "Escarlate",
         255,
         36,
         0,
@@ -12471,7 +12471,7 @@ var colorNameList = [
     ],
     [
         "2E8B57",
-        "Sea Green",
+        "Herbal",
         46,
         139,
         87,
@@ -12541,7 +12541,7 @@ var colorNameList = [
     ],
     [
         "FFF5EE",
-        "Seashell Peach",
+        "Concha",
         255,
         245,
         238,
@@ -12771,7 +12771,7 @@ var colorNameList = [
     ],
     [
         "FC0FC0",
-        "Shocking Pink",
+        "Rosa Choque",
         252,
         15,
         192,
@@ -12821,7 +12821,7 @@ var colorNameList = [
     ],
     [
         "C0C0C0",
-        "Silver",
+        "Prata",
         192,
         192,
         192,
@@ -12931,7 +12931,7 @@ var colorNameList = [
     ],
     [
         "708090",
-        "Slate Gray",
+        "Cinza ardósia",
         112,
         128,
         144,
@@ -13181,7 +13181,7 @@ var colorNameList = [
     ],
     [
         "00FF7F",
-        "Spring Green",
+        "Verde primavera",
         0,
         255,
         127,
@@ -13311,7 +13311,7 @@ var colorNameList = [
     ],
     [
         "4682B4",
-        "Steel Blue",
+        "Azul aço",
         70,
         130,
         180,
@@ -13771,7 +13771,7 @@ var colorNameList = [
     ],
     [
         "D2B48C",
-        "Tan",
+        "Castanho claro",
         210,
         180,
         140,
@@ -13811,7 +13811,7 @@ var colorNameList = [
     ],
     [
         "F28500",
-        "Tangerine",
+        "Tangerina",
         242,
         133,
         0,
@@ -13951,7 +13951,7 @@ var colorNameList = [
     ],
     [
         "008080",
-        "Teal",
+        "Verde-azulado",
         0,
         128,
         128,
@@ -14001,7 +14001,7 @@ var colorNameList = [
     ],
     [
         "E2725B",
-        "Terracotta",
+        "Terracota",
         226,
         114,
         91,
@@ -14051,7 +14051,7 @@ var colorNameList = [
     ],
     [
         "D8BFD8",
-        "Thistle",
+        "Cardo",
         216,
         191,
         216,
@@ -14631,7 +14631,7 @@ var colorNameList = [
     ],
     [
         "120A8F",
-        "Ultramarine",
+        "Azul marinho",
         18,
         10,
         143,
@@ -15081,7 +15081,7 @@ var colorNameList = [
     ],
     [
         "FFA500",
-        "Web Orange",
+        "Laranja",
         255,
         165,
         0,
@@ -15151,7 +15151,7 @@ var colorNameList = [
     ],
     [
         "F5DEB3",
-        "Wheat",
+        "Trigo",
         245,
         222,
         179,
@@ -15191,7 +15191,7 @@ var colorNameList = [
     ],
     [
         "FFFFFF",
-        "White",
+        "Branco",
         255,
         255,
         255,
@@ -15471,7 +15471,7 @@ var colorNameList = [
     ],
     [
         "FFFF00",
-        "Yellow",
+        "Amarelo",
         255,
         255,
         0,
@@ -15658,29 +15658,1390 @@ var colorNameList = [
         148,
         255,
         246
+    ],
+    [
+        "00CCEE",
+        "Azul turquesa",
+        0,
+        204,
+        238,
+        133,
+        255,
+        119
+    ],
+    [
+        "00DDFF",
+        "Azul turquesa brilhante",
+        0,
+        221,
+        255,
+        133,
+        255,
+        127
+    ],
+    [
+        "00BDCE",
+        "Azul brasilis",
+        0,
+        189,
+        206,
+        131,
+        255,
+        103
+    ],
+    [
+        "09ACDB",
+        "Azul brasilis brilhante",
+        9,
+        172,
+        219,
+        137,
+        234,
+        113
+    ],
+    [
+        "1981CD",
+        "Azul Tóquio",
+        25,
+        129,
+        205,
+        145,
+        199,
+        115
+    ],
+    [
+        "66CDAA",
+        "Água-marinha média",
+        102,
+        205,
+        170,
+        113,
+        129,
+        153
+    ],
+    [
+        "00A4CD",
+        "Azul celeste",
+        0,
+        164,
+        205,
+        136,
+        255,
+        102
+    ],
+    [
+        "ECDB00",
+        "Amarelo brasilis",
+        236,
+        219,
+        0,
+        39,
+        255,
+        118
+    ],
+    [
+        "ECD690",
+        "Amarelo creme",
+        236,
+        214,
+        144,
+        32,
+        180,
+        190
+    ],
+    [
+        "FFFFE0",
+        "Amarelo claro",
+        255,
+        255,
+        224,
+        42,
+        255,
+        239
+    ],
+    [
+        "F2B73F",
+        "Amarelo escuro",
+        242,
+        183,
+        63,
+        28,
+        222,
+        152
+    ],
+    [
+        "FAFAD2",
+        "Amarelo ouro claro",
+        250,
+        250,
+        210,
+        42,
+        203,
+        229
+    ],
+    [
+        "EEAD2D",
+        "Amarelo queimado",
+        238,
+        173,
+        45,
+        28,
+        216,
+        141
+    ],
+    [
+        "DDA0DD",
+        "Ameixa",
+        221,
+        160,
+        221,
+        -42,
+        120,
+        190
+    ],
+    [
+        "FFEBCD",
+        "Amêndoa",
+        255,
+        235,
+        205,
+        25,
+        255,
+        230
+    ],
+    [
+        "6A5ACD",
+        "Azul ardósia",
+        106,
+        90,
+        205,
+        175,
+        136,
+        147
+    ],
+    [
+        "8470FF",
+        "Azul ardósia claro",
+        132,
+        112,
+        255,
+        175,
+        255,
+        183
+    ],
+    [
+        "483D8B",
+        "Azul ardósia escuro",
+        72,
+        61,
+        139,
+        175,
+        99,
+        100
+    ],
+    [
+        "7B68EE",
+        "Azul ardósia médio",
+        123,
+        104,
+        238,
+        176,
+        203,
+        171
+    ],
+    [
+        "B8CAD4",
+        "Azul areado",
+        184,
+        202,
+        212,
+        142,
+        62,
+        198
+    ],
+    [
+        "B0C4DE",
+        "Azul aço claro",
+        176,
+        196,
+        222,
+        151,
+        104,
+        199
+    ],
+    [
+        "5F9EA0",
+        "Azul cadete",
+        95,
+        158,
+        160,
+        128,
+        65,
+        127
+    ],
+    [
+        "054F77",
+        "Azul camarada",
+        5,
+        79,
+        119,
+        142,
+        234,
+        62
+    ],
+    [
+        "F0FFFF",
+        "Azul celeste",
+        240,
+        255,
+        255,
+        127,
+        255,
+        247
+    ],
+    [
+        "ADD8E6",
+        "Azul claro",
+        173,
+        216,
+        230,
+        137,
+        135,
+        201
+    ],
+    [
+        "87CEEB",
+        "Azul céu",
+        135,
+        206,
+        235,
+        139,
+        182,
+        185
+    ],
+    [
+        "87CEFA",
+        "Azul céu claro",
+        135,
+        206,
+        250,
+        143,
+        234,
+        192
+    ],
+    [
+        "00BFFF",
+        "Azul céu profundo",
+        0,
+        191,
+        255,
+        138,
+        255,
+        127
+    ],
+    [
+        "00008B",
+        "Azul escuro",
+        0,
+        0,
+        139,
+        170,
+        255,
+        69
+    ],
+    [
+        "5D8AA8",
+        "Azul força aérea",
+        93,
+        138,
+        168,
+        144,
+        76,
+        130
+    ],
+    [
+        "a6aa3e",
+        "Azul manteiga",
+        166,
+        170,
+        62,
+        44,
+        118,
+        116
+    ],
+    [
+        "191970",
+        "Azul meia-noite",
+        25,
+        25,
+        112,
+        170,
+        161,
+        68
+    ],
+    [
+        "0000CD",
+        "Azul médio",
+        0,
+        0,
+        205,
+        170,
+        255,
+        102
+    ],
+    [
+        "084D6E",
+        "Azul petróleo",
+        8,
+        77,
+        110,
+        141,
+        220,
+        59
+    ],
+    [
+        "248EFF",
+        "Azul taparuere",
+        36,
+        142,
+        255,
+        149,
+        255,
+        145
+    ],
+    [
+        "0000DD",
+        "Azul real",
+        0,
+        0,
+        221,
+        170,
+        255,
+        110
+    ],
+    [
+        "8A2BE2",
+        "Azul violeta",
+        138,
+        43,
+        226,
+        192,
+        193,
+        134
+    ],
+    [
+        "FAEBD7",
+        "Branco antigo",
+        250,
+        235,
+        215,
+        24,
+        198,
+        232
+    ],
+    [
+        "F8F8FF",
+        "Branco fantasma",
+        248,
+        248,
+        255,
+        170,
+        255,
+        251
+    ],
+    [
+        "FFFAF0",
+        "Branco floral",
+        255,
+        250,
+        240,
+        28,
+        255,
+        247
+    ],
+    [
+        "F5F5F5",
+        "Branco fumaça",
+        245,
+        245,
+        245,
+        0,
+        0,
+        245
+    ],
+    [
+        "A7F432",
+        "Brasil",
+        167,
+        244,
+        50,
+        59,
+        229,
+        147
+    ],
+    [
+        "CD7F32",
+        "Bronze",
+        205,
+        127,
+        50,
+        21,
+        155,
+        127
+    ],
+    [
+        "8B5742",
+        "Caramelo",
+        139,
+        87,
+        66,
+        12,
+        90,
+        102
+    ],
+    [
+        "712F26",
+        "Carmim",
+        113,
+        47,
+        38,
+        5,
+        126,
+        75
+    ],
+    [
+        "992244",
+        "Carmim clássico",
+        153,
+        34,
+        68,
+        -12,
+        162,
+        93
+    ],
+    [
+        "8B0000",
+        "Castanho avermelhado",
+        139,
+        0,
+        0,
+        0,
+        255,
+        69
+    ],
+    [
+        "008B8B",
+        "Ciano escuro",
+        0,
+        139,
+        139,
+        127,
+        255,
+        69
+    ],
+    [
+        "778899",
+        "Cinza ardósia claro",
+        119,
+        136,
+        153,
+        148,
+        36,
+        136
+    ],
+    [
+        "2F4F4F",
+        "Cinza ardósia escuro",
+        47,
+        79,
+        79,
+        127,
+        64,
+        63
+    ],
+    [
+        "D3D3D3",
+        "Cinza claro",
+        211,
+        211,
+        211,
+        0,
+        0,
+        211
+    ],
+    [
+        "A9A9A9",
+        "Cinza escuro",
+        169,
+        169,
+        169,
+        0,
+        0,
+        169
+    ],
+    [
+        "696969",
+        "Cinza fosco",
+        105,
+        105,
+        105,
+        0,
+        0,
+        105
+    ],
+    [
+        "DCDCDC",
+        "Cinza médio",
+        220,
+        220,
+        220,
+        0,
+        0,
+        220
+    ],
+    [
+        "F08080",
+        "Coral claro",
+        240,
+        128,
+        128,
+        0,
+        201,
+        184
+    ],
+    [
+        "FFE4C4",
+        "Creme de marisco",
+        255,
+        228,
+        196,
+        23,
+        254,
+        225
+    ],
+    [
+        "F5FFFA",
+        "Creme de menta",
+        245,
+        255,
+        250,
+        106,
+        255,
+        250
+    ],
+    [
+        "BDB76B",
+        "Caqui escuro",
+        189,
+        183,
+        107,
+        39,
+        97,
+        148
+    ],
+    [
+        "B8860B",
+        "Dourado escuro",
+        184,
+        134,
+        11,
+        30,
+        226,
+        97
+    ],
+    [
+        "EEE8AA",
+        "Dourado pálido",
+        238,
+        232,
+        170,
+        38,
+        170,
+        204
+    ],
+    [
+        "555D50",
+        "Ébano",
+        85,
+        93,
+        80,
+        68,
+        19,
+        86
+    ],
+    [
+        "44D7A8",
+        "Eucalipto",
+        68,
+        215,
+        168,
+        113,
+        165,
+        141
+    ],
+    [
+        "B53389",
+        "Fandango",
+        181,
+        51,
+        137,
+        -28,
+        142,
+        116
+    ],
+    [
+        "831D1C",
+        "Grená",
+        131,
+        29,
+        28,
+        0,
+        165,
+        79
+    ],
+    [
+        "E6E8FA",
+        "Glitter",
+        230,
+        232,
+        250,
+        165,
+        169,
+        240
+    ],
+    [
+        "Be5b59",
+        "Goiaba",
+        190,
+        91,
+        89,
+        0,
+        111,
+        139
+    ],
+    [
+        "4C516D",
+        "Independência",
+        76,
+        81,
+        109,
+        163,
+        45,
+        92
+    ],
+    [
+        "5A4FCF",
+        "Iris",
+        90,
+        79,
+        207,
+        173,
+        145,
+        143
+    ],
+    [
+        "FF4500",
+        "Jambo",
+        255,
+        69,
+        0,
+        11,
+        255,
+        127
+    ],
+    [
+        "F8DE7E",
+        "Jasmine",
+        248,
+        222,
+        126,
+        33,
+        228,
+        187
+    ],
+    [
+        "8EE53F",
+        "Kiwi",
+        142,
+        229,
+        63,
+        64,
+        194,
+        146
+    ],
+    [
+        "6B4423",
+        "Kobicha",
+        107,
+        68,
+        35,
+        19,
+        129,
+        71
+    ],
+    [
+        "FF8C00",
+        "Laranja escuro",
+        255,
+        140,
+        0,
+        23,
+        255,
+        127
+    ],
+    [
+        "FFB84D",
+        "Laranja claro",
+        255,
+        184,
+        77,
+        25,
+        255,
+        166
+    ],
+    [
+        "E6E6FA",
+        "Lavanda",
+        230,
+        230,
+        250,
+        170,
+        169,
+        240
+    ],
+    [
+        "DEB887",
+        "Madeira",
+        222,
+        184,
+        135,
+        23,
+        145,
+        178
+    ],
+    [
+        "8B008B",
+        "Magenta escuro",
+        139,
+        0,
+        139,
+        -42,
+        255,
+        69
+    ],
+    [
+        "F0FFF0",
+        "Maná",
+        240,
+        255,
+        240,
+        85,
+        255,
+        247
+    ],
+    [
+        "964b00",
+        "Marrom",
+        150,
+        75,
+        0,
+        21,
+        255,
+        75
+    ],
+    [
+        "A52A2A",
+        "Marrom claro",
+        165,
+        42,
+        42,
+        0,
+        151,
+        103
+    ],
+    [
+        "BC8F8F",
+        "Marrom rosado",
+        188,
+        143,
+        143,
+        0,
+        64,
+        165
+    ],
+    [
+        "8B4513",
+        "Marrom sela",
+        139,
+        69,
+        19,
+        17,
+        193,
+        78
+    ],
+    [
+        "FFF8DC",
+        "Milho Claro",
+        255,
+        248,
+        220,
+        33,
+        255,
+        237
+    ],
+    [
+        "FFE4B5",
+        "Mocassim",
+        255,
+        228,
+        181,
+        26,
+        255,
+        218
+    ],
+    [
+        "FFFAFA",
+        "Neve",
+        255,
+        250,
+        250,
+        0,
+        255,
+        252
+    ],
+    [
+        "E9FFDB",
+        "Nyanza",
+        233,
+        255,
+        219,
+        68,
+        255,
+        237
+    ],
+    [
+        "556B2F",
+        "Oliva escura",
+        85,
+        107,
+        47,
+        58,
+        99,
+        77
+    ],
+    [
+        "9932CC",
+        "Orquídea escura",
+        153,
+        50,
+        204,
+        198,
+        154,
+        127
+    ],
+    [
+        "BA55D3",
+        "Orquídea média",
+        186,
+        85,
+        211,
+        204,
+        150,
+        147
+    ],
+    [
+        "CD853F",
+        "Pardo",
+        205,
+        133,
+        63,
+        20,
+        149,
+        134
+    ],
+    [
+        "CC6600",
+        "Pardo escuro",
+        204,
+        102,
+        0,
+        21,
+        255,
+        102
+    ],
+    [
+        "FFDAB9",
+        "Pêssego",
+        255,
+        218,
+        185,
+        20,
+        255,
+        220
+    ],
+    [
+        "800080",
+        "Púrpura",
+        128,
+        0,
+        128,
+        -42,
+        255,
+        64
+    ],
+    [
+        "111111",
+        "Quantum",
+        17,
+        17,
+        17,
+        0,
+        0,
+        17
+    ],
+    [
+        "51484F",
+        "Quartz",
+        81,
+        72,
+        79,
+        -33,
+        14,
+        76
+    ],
+    [
+        "FFCBDB",
+        "Rosa",
+        255,
+        203,
+        219,
+        -13,
+        254,
+        228
+    ],
+    [
+        "CD69CD",
+        "Rosa amoroso",
+        205,
+        105,
+        205,
+        -42,
+        127,
+        155
+    ],
+    [
+        "FFB6C1",
+        "Rosa claro",
+        255,
+        182,
+        193,
+        -6,
+        255,
+        218
+    ],
+    [
+        "DA69A1",
+        "Rosa danação",
+        218,
+        105,
+        161,
+        -21,
+        154,
+        161
+    ],
+    [
+        "FFE4E1",
+        "Rosa embaçado",
+        255,
+        228,
+        225,
+        4,
+        255,
+        240
+    ],
+    [
+        "FF1493",
+        "Rosa profundo",
+        255,
+        20,
+        147,
+        -22,
+        255,
+        137
+    ],
+    [
+        "993399",
+        "Roxo",
+        153,
+        51,
+        153,
+        -42,
+        127,
+        102
+    ],
+    [
+        "8A008A",
+        "Roxo brasilis",
+        138,
+        0,
+        138,
+        -42,
+        255,
+        69
+    ],
+    [
+        "6D351A",
+        "Rútilo",
+        109,
+        53,
+        26,
+        13,
+        156,
+        67
+    ],
+    [
+        "FA7F72",
+        "Salmão",
+        250,
+        127,
+        114,
+        4,
+        237,
+        182
+    ],
+    [
+        "FFA07A",
+        "Salmão claro",
+        255,
+        160,
+        122,
+        12,
+        255,
+        188
+    ],
+    [
+        "E9967A",
+        "Salmão escuro",
+        233,
+        150,
+        122,
+        10,
+        182,
+        177
+    ],
+    [
+        "FF8247",
+        "Siena",
+        255,
+        130,
+        71,
+        13,
+        254,
+        163
+    ],
+    [
+        "705714",
+        "Sépia",
+        112,
+        87,
+        20,
+        30,
+        177,
+        65
+    ],
+    [
+        "B22222",
+        "Tijolo refratário",
+        178,
+        34,
+        34,
+        0,
+        173,
+        105
+    ],
+    [
+        "FF6347",
+        "Tomate",
+        255,
+        99,
+        71,
+        6,
+        254,
+        163
+    ],
+    [
+        "FF2401",
+        "Triássico",
+        255,
+        36,
+        1,
+        5,
+        255,
+        128
+    ],
+    [
+        "40E0D0",
+        "Turquesa",
+        64,
+        224,
+        208,
+        123,
+        183,
+        144
+    ],
+    [
+        "00CED1",
+        "Turquesa escura",
+        0,
+        206,
+        209,
+        128,
+        255,
+        104
+    ],
+    [
+        "48D1CC",
+        "Turquesa média",
+        72,
+        209,
+        204,
+        125,
+        152,
+        140
+    ],
+    [
+        "AFEEEE",
+        "Turquesa pálida",
+        175,
+        238,
+        238,
+        127,
+        165,
+        206
+    ],
+    [
+        "8878C3",
+        "Ube",
+        136,
+        120,
+        195,
+        179,
+        98,
+        157
+    ],
+    [
+        "EC2300",
+        "Urucum",
+        236,
+        35,
+        0,
+        6,
+        255,
+        118
+    ],
+    [
+        "008000",
+        "Verde",
+        0,
+        128,
+        0,
+        85,
+        255,
+        64
+    ],
+    [
+        "9ACD32",
+        "Verde amarelado",
+        154,
+        205,
+        50,
+        56,
+        155,
+        127
+    ],
+    [
+        "90EE90",
+        "Verde claro",
+        144,
+        238,
+        144,
+        85,
+        187,
+        191
+    ],
+    [
+        "006400",
+        "Verde escuro",
+        0,
+        100,
+        0,
+        85,
+        255,
+        50
+    ],
+    [
+        "CCFF33",
+        "Verde fluorescente",
+        204,
+        255,
+        51,
+        53,
+        255,
+        153
+    ],
+    [
+        "32CD32",
+        "Verde lima",
+        50,
+        205,
+        50,
+        85,
+        155,
+        127
+    ],
+    [
+        "7CFC00",
+        "Verde grama",
+        124,
+        252,
+        0,
+        64,
+        255,
+        126
+    ],
+    [
+        "20B2AA",
+        "Verde mar claro",
+        32,
+        178,
+        170,
+        125,
+        177,
+        105
+    ],
+    [
+        "8FBC8F",
+        "Verde mar escuro",
+        143,
+        188,
+        143,
+        85,
+        64,
+        165
+    ],
+    [
+        "3CB371",
+        "Verde mar médio",
+        60,
+        179,
+        113,
+        103,
+        126,
+        119
+    ],
+    [
+        "00FA9A",
+        "Verde primavera médio",
+        0,
+        250,
+        154,
+        111,
+        255,
+        125
+    ],
+    [
+        "98FB98",
+        "Verde pálido",
+        152,
+        251,
+        152,
+        85,
+        235,
+        201
+    ],
+    [
+        "550000",
+        "Vermelho enegrecido",
+        85,
+        0,
+        0,
+        0,
+        255,
+        42
+    ],
+    [
+        "D02090",
+        "Vermelho violeta",
+        208,
+        32,
+        144,
+        -27,
+        187,
+        120
+    ],
+    [
+        "DB7093",
+        "Vermelho violeta pálido",
+        219,
+        112,
+        147,
+        -13,
+        152,
+        165
+    ],
+    [
+        "9400D3",
+        "Violeta escuro",
+        148,
+        0,
+        211,
+        199,
+        255,
+        105
+    ],
+    [
+        "F8CBF8",
+        "Violeta claro",
+        248,
+        203,
+        248,
+        -42,
+        194,
+        225
+    ],
+    [
+        "0014A8",
+        "Zaffre",
+        0,
+        20,
+        168,
+        164,
+        255,
+        84
     ]
 ];
 
 // get color object from list
 var nameThatColor = (color) => {
+    
     var ntcrgb = (color) => {
         return [parseInt('0x' + color.substring(1, 3)), parseInt('0x' + color.substring(3, 5)),  parseInt('0x' + color.substring(5, 7))];
     }
-    
+
     var ntchsl = (color) => {
         var rgb = [parseInt('0x' + color.substring(1, 3)) / 255, parseInt('0x' + color.substring(3, 5)) / 255, parseInt('0x' + color.substring(5, 7)) / 255];
         var min, max, delta, h, s, l;
         var r = rgb[0], g = rgb[1], b = rgb[2];
-    
+
         min = Math.min(r, Math.min(g, b));
         max = Math.max(r, Math.max(g, b));
         delta = max - min;
         l = (min + max) / 2;
-    
+
         s = 0;
         if(l > 0 && l < 1)
         s = delta / (l < 0.5 ? (2 * l) : (2 - 2 * l));
-    
+
         h = 0;
         if(delta > 0){
         if (max == r && max != g) h += (g - b) / delta;
@@ -15690,50 +17051,48 @@ var nameThatColor = (color) => {
         }
         return [parseInt(h * 255), parseInt(s * 255), parseInt(l * 255)];
     }
+    var returnError = {
+        name: "Invalid Color",
+        hex: "#000000",
+        error: "Invalid Color: " + color
+    };
 
     color = color.toUpperCase();
     if(color.length < 3 || color.length > 7)
-    return {
-        name: "Invalid Color",
-        hex: "#000000",
-        error: "Invalid Color: " + color
-    }
+        return returnError;
     if(color.length % 3 == 0)
-    color = "#" + color;
+        color = "#" + color;
+
     if(color.length == 4)
-    color = "#" + color.substr(1, 1) + color.substr(1, 1) + color.substr(2, 1) + color.substr(2, 1) + color.substr(3, 1) + color.substr(3, 1);
+        color = "#" + color.substr(1, 1) + color.substr(1, 1) + color.substr(2, 1) + color.substr(2, 1) + color.substr(3, 1) + color.substr(3, 1);
 
     var rgb = ntcrgb(color);
     var r = rgb[0], g = rgb[1], b = rgb[2];
+
     var hsl = ntchsl(color);
     var h = hsl[0], s = hsl[1], l = hsl[2];
+
     var ndf1 = 0; ndf2 = 0; ndf = 0;
     var cl = -1, df = -1;
 
-    for(var i = 0; i < colorNameList.length; i++){
-    if(color == "#" + colorNameList[i][0])
-        return {
-            name: colorNameList[i][1],
-            hex: "#" + colorNameList[i][0],
-            error: ""
+    for(var i = 0; i < nameThatColorList.length; i++){
+        if(color == "#" + nameThatColorList[i][0])
+            return {
+                name: nameThatColorList[i][1],
+                hex: "#" + nameThatColorList[i][0]
+            }
+
+        ndf1 = Math.pow(r - nameThatColorList[i][2], 2) + Math.pow(g - nameThatColorList[i][3], 2) + Math.pow(b - nameThatColorList[i][4], 2);
+        ndf2 = Math.pow(h - nameThatColorList[i][5], 2) + Math.pow(s - nameThatColorList[i][6], 2) + Math.pow(l - nameThatColorList[i][7], 2);
+        ndf = ndf1 + ndf2 * 2;
+        if(df < 0 || df > ndf){
+            df = ndf;
+            cl = i;
         }
-
-    ndf1 = Math.pow(r - colorNameList[i][2], 2) + Math.pow(g - colorNameList[i][3], 2) + Math.pow(b - colorNameList[i][4], 2);
-    ndf2 = Math.pow(h - colorNameList[i][5], 2) + Math.pow(s - colorNameList[i][6], 2) + Math.pow(l - colorNameList[i][7], 2);
-    ndf = ndf1 + ndf2 * 2;
-    if(df < 0 || df > ndf){
-        df = ndf;
-        cl = i;
-    }
     }
 
-    return (cl < 0 ? {
-        name: "Invalid Color",
-        hex: "#000000",
-        error: "Invalid Color: " + color
-    } : {
-        name: colorNameList[cl][1],
-        hex: "#" + colorNameList[cl][0],
-        error: ""
+    return (cl < 0 ? returnError : {
+        name: nameThatColorList[cl][1],
+        hex: "#" + nameThatColorList[cl][0]
     });
 }

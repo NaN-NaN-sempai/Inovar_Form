@@ -214,12 +214,15 @@
                     <br><br>
                     <h3>Cores Para a Capa</h3><br>
 
-                    <span class="title">Caso queira, informe até 3 cores que deseja usar:</span>
+                    <span class="title">Caso queira, informe até 3 cores que deseja usar.</span>
+                    <br>
+                    <i>(os nomes e os códigos das cores podem ser copiados, descreva onde quer usar cada cor nas proxima perguntas)</i>
                     <br><br>
-                    <i>(toque no espaço acima dos textos para escolher uma cor)</i>
+                    <span>Toque no espaço acima do nome para escolher uma cor:</span>
                     <br><br><br>
 
                     <div class="inputColorContainer">
+                        
                         <div class="inputColor">
                             <input type="color" id="capaColor-1" value="#FFFFFF">
                             <label for="capaColor-1">
@@ -257,6 +260,9 @@
                         </div>
 
                     </div>
+
+                    <p class="sideNote">Design baseado nos <a href="https://www.pantone.com.br/loja/pantone-lifestyle/livros-e-papelaria/pantone-postcards" target="_blank">Postcards da Pantone®</a></p>
+
                 </div>
 
             </div>
@@ -700,7 +706,6 @@
         var name = e.querySelector(".name");
 
         output.innerHTML = input.value;
-        console.log(nameThatColor(input.value));
         name.innerHTML = nameThatColor(input.value).name;
 
         e.addEventListener("input", () => {
