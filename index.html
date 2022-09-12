@@ -913,7 +913,7 @@
 <!-- setup -->
 <script>
 
-    //
+    // horarios handlers
     (() => {
         var tempoInicio = new Date();
         tempoInicio.setDate(tempoInicio.getMonth() - 31*2);
@@ -924,7 +924,7 @@
             document.querySelector("#tempoFinal").value = "";
 
             var tempoFim= new Date(document.querySelector("#tempoInicio").value);
-            tempoFim.setMonth(tempoInicio.getMonth() + (13 + (document.querySelector("#tempoFinalMesAmais").checked? 1: 0))); 
+            tempoFim.setMonth(tempoFim.getMonth() + (13 + (document.querySelector("#tempoFinalMesAmais").checked? 1: 0))); 
 
             document.querySelector("#tempoFinal").min = dataInicio;
             document.querySelector("#tempoFinal").max = tempoFim.getFullYear() + "-" + (tempoFim.getMonth()+1<10?"0"+(tempoFim.getMonth()+1): tempoFim.getMonth()+1);
