@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./style/radio.css">
     <link rel="stylesheet" href="./style/imageCheckBox.css">
     <link rel="stylesheet" href="./style/colorInput.css">
+    <link rel="stylesheet" href="./style/dateInput.css">
 
     
     <!-- Icones Font Awesome -->
@@ -401,6 +402,153 @@
         </form> 
     </div>
 
+
+    <div class="mainContainer">
+        
+        <h2 class="title">
+            Páginas
+        </h2>
+        <p>
+            Texto exemplo Páginas.
+        </p>
+        
+        <br><hr>
+
+        
+        <form class="formSection" action="/teste"> 
+
+            <div class="inputDiv">
+                <h3>Procedimentos</h3><br>
+                <sup class="mandatory"></sup> <br>
+                <i>(Para agendas profissionais)</i><br>
+                <span class="title">Como você quer o campo de procedimentos?
+                    <br><br>
+                    Escolha uma das opções abaixo:
+                </span>
+                
+                <div id="procedimentos" class="imageCheckBoxWrapper selectOnlyOne"></div>
+            </div>
+            
+
+            <div class="inputDiv ignore" id="procedimentosText">
+                <hr><br><br>
+                <sup class="mandatory"></sup> <br>
+                <span class="title">Com quais procedimentos você trabalha?
+                    <br>
+                    <i>(Utilize a virgula para separar os procedimentos)</i></span>
+                <br>
+                <input  class="simpleInput" type="text" placeholder="Ex: Mãos, Pés, etc..." required>
+            </div>
+
+            <div id="querHorario" class="inputDiv ignore">  
+                <hr><br><br>
+
+                <sup class="mandatory"></sup> <br>
+                <span class="title">Você Horários nas folhas?</span>
+                <br>
+                    
+                <div class="radio">
+                    <label class="radioContainer"><span class="name">Sim</span>
+                        <input type="radio" value="Sim" name="querHorario" required>
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <label class="radioContainer"><span class="name">Não</span>
+                        <input type="radio" value="Não" name="querHorario" checked>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div id="horariosSection" class="ignores">
+                <div class="inputDiv">
+                    <hr><br><br><br>
+
+                    <h3>Horários</h3><br>
+
+                    <sup class="mandatory"></sup> <br>
+                    <span class="title">
+                        Qual o horário de <b>início</b> dos seus atendimentos?
+                    </span>
+                    <br>
+                    
+
+                    <label for="horarioA" style="position: relative;">
+                        <input required id="horarioA" type="tel" maxlength="4" class="hiddenNotIgnore" placeholder="00:00">
+                        <p id="horarioAOutput" class="simpleInput inputTime empty">00:00</p>
+                    </label>
+                    
+                </div>
+                
+                <div class="inputDiv">
+
+                    <span class="title">
+                        Qual o horário de <b>término</b> dos seus atendimentos?
+                    </span>
+                    <br>
+                    
+
+                    <label for="horarioB" style="position: relative;">
+                        <input required id="horarioB" type="tel" maxlength="4" class="hiddenNotIgnore" placeholder="00:00">
+                        <p id="horarioBOutput" class="simpleInput inputTime empty">00:00</p>
+                    </label>
+                    
+                </div>
+
+                <div class="inputDiv">  
+                    <hr><br><br>
+                    <sup class="mandatory"></sup> <br>
+                    <span class="title">Seus intervalos de agendamentos são:</span><br>
+                    <i>(Ex: 30 minutos, 45 minutos, 1 hora, etc...)</i>
+                    <br>
+                    
+
+                    <label for="intervalos" style="position: relative;">
+                        <input required id="intervalos" type="tel" maxlength="4" class="hiddenNotIgnore" placeholder="00:00">
+                        <p id="intervalosOutput" class="simpleInput inputTime empty">00:00</p> <span id="timeType"> minutos</span>
+                    </label>
+                </div>
+
+                <div class="inputDiv">  
+                    <hr><br><br>
+
+                    <span class="title">Insira a data de <b>início</b> da agenda abaixo:</span>
+                    <br><br>   
+        
+                    <label class="checkboxForText" for="tempoFinalMesAmais">
+                        <input id="tempoFinalMesAmais" class="simpleCheckbox" type="checkbox">
+                        <span>Quero 1 mês a mais <i>(R$ 18,00)</i></span>
+                    </label>
+                    <br>
+                    
+
+                    <label for="tempoInicio" class="inputDate">                            
+                        <input id="tempoInicio" type="month">
+                    </label>
+                    
+                    <br><br><br>
+
+                    <span class="title">Insira a data de <b>término</b> da agenda abaixo:</span>   
+
+                    <br><br>
+
+                    <label for="tempoFinal" class="inputDate">                            
+                        <input id="tempoFinal" type="month">
+                    </label>
+
+                    <br>
+
+                    <input id="tempoFinalSetMax" type="button" value="Inserir Máximo">
+                </div>
+            </div>
+
+
+            <input id="tempoFinalSetMax" type="submit" value="Enviar">
+        </form>
+    </div>
+
 </body>
 
 <!-- functions -->
@@ -438,13 +586,15 @@
                             name.className = "name";
                             name.innerHTML = '<span class="insertIcon"></span> ' + a.name;
 
-                        var hr = document.createElement("hr");
+                        if(a.price){
+                            var hr = document.createElement("hr");
 
-                        var price = document.createElement("p");
-                            price.className = "price";
-                            price.innerHTML = "(" + a.price + ")";
+                            var price = document.createElement("p");
+                                price.className = "price";
+                                price.innerHTML = "(" + a.price + ")";
+                        }
                         
-                    labelSelector.append(img, name, hr, price);
+                    labelSelector.append(img, name, hr?hr:"", price?price:"");
                 label.append(labelSelector);
             imageCheckBoxContainer.append(input, label);
 
@@ -457,6 +607,7 @@
 <script src="./lists/paginaDestaque.js"></script>
 <script src="./lists/elasticos.js"></script>
 <script src="./lists/adicionais.js"></script>
+<script src="./lists/procedimetos.js"></script>
 
 <script src="./scripts/nameThatColor.js"></script>
 
@@ -464,44 +615,48 @@
 
 <!-- hidden input -->
 <script>
-    var executeHiddenInput = (input, output, ignoreCheckMark) => {
+    var executeHiddenInput = (input, output, ignoreCheckMark, customFunction) => {
         var doNumberPatern = () => {
             var output2;
 
-            if(!ignoreCheckMark?.checked){
-                if(input.value.length < 11){
-                    var area = input.value.substr(0, 2);
-                    var pre = input.value.substr(2, 4);
-                    var tel = input.value.substr(6, 4);
-                    if (area.length < 2) {
-                        output2 = "+55 (" + area;
-                    } else if (area.length == 2 && pre.length < 4) {
-                        output2 = "+55 (" + area + ") " + "" + pre;
-                    } else if (area.length == 2 && pre.length == 4) {
-                        output2 = "+55 (" + area + ") " + "" + pre + "-"+tel;
+            if(!customFunction){
+                if(!ignoreCheckMark?.checked){
+                    if(input.value.length < 11){
+                        var area = input.value.substr(0, 2);
+                        var pre = input.value.substr(2, 4);
+                        var tel = input.value.substr(6, 4);
+                        if (area.length < 2) {
+                            output2 = "+55 (" + area;
+                        } else if (area.length == 2 && pre.length < 4) {
+                            output2 = "+55 (" + area + ") " + "" + pre;
+                        } else if (area.length == 2 && pre.length == 4) {
+                            output2 = "+55 (" + area + ") " + "" + pre + "-"+tel;
+                        }
+
+                        output.innerHTML = output2;
+
+                    } else if(input.value.length >= 11){
+                        var area = input.value.substr(0, 2);
+                        var pre = input.value.substr(2, 5);
+                        var tel = input.value.substr(7, 4);
+                        if (area.length < 2) {
+                            output2 = "+55 (" + area;
+                        } else if (area.length == 2 && pre.length < 5) {
+                            output2 = "+55 (" + area + ") " + "" + pre;
+                        } else if (area.length == 2 && pre.length == 5) {
+                            output2 = "+55 (" + area + ") " + "" + pre + "-"+tel;
+                        }
+
+                        output.innerHTML = output2;
                     }
-
-                    output.innerHTML = output2;
-
-                } else if(input.value.length >= 11){
-                    var area = input.value.substr(0, 2);
-                    var pre = input.value.substr(2, 5);
-                    var tel = input.value.substr(7, 4);
-                    if (area.length < 2) {
-                        output2 = "+55 (" + area;
-                    } else if (area.length == 2 && pre.length < 5) {
-                        output2 = "+55 (" + area + ") " + "" + pre;
-                    } else if (area.length == 2 && pre.length == 5) {
-                        output2 = "+55 (" + area + ") " + "" + pre + "-"+tel;
-                    }
-
-                    output.innerHTML = output2;
+                    
+                    input.value = input.value.slice(0, 11);
+                    
+                } else {
+                    output.innerHTML = input.value;
                 }
-                
-                input.value = input.value.slice(0, 11);
-                
             } else {
-                output.innerHTML = input.value;
+                customFunction(input, output, ignoreCheckMark);
             }
 
 
@@ -547,7 +702,33 @@
 
     executeHiddenInput(document.querySelector("#numeroCelular"),
                        document.querySelector("#numeroCelularOutput"),
-                       document.querySelector("#ignoreTextCorrection"))
+                       document.querySelector("#ignoreTextCorrection"));
+
+    var timeFunction = (input, output) => {
+        var all = "0".repeat(4 - input.value.length) + input.value;
+        var first = all.slice(0, 2);
+        var second = all.slice(2);
+
+        output.innerHTML = first + ":" + second;
+    }
+
+    executeHiddenInput(document.querySelector("#horarioA"),
+                       document.querySelector("#horarioAOutput"), undefined, timeFunction);
+
+    executeHiddenInput(document.querySelector("#horarioB"),
+                    document.querySelector("#horarioBOutput"), undefined, timeFunction);
+
+    executeHiddenInput(document.querySelector("#intervalos"),
+                   document.querySelector("#intervalosOutput"), undefined, (input, output) => {
+                        var all = "0".repeat(4 - input.value.length) + input.value;
+                        var first = all.slice(0, 2);
+                        var second = all.slice(2);
+
+                        document.querySelector("#timeType").innerHTML = first == "00"? " minuto" + (second=="01"? "" : "s") :
+                                                                                       " hora" + (first=="01"? "" : "s")
+
+                        output.innerHTML = first + ":" + second;
+                    });
 </script>
 
 
@@ -644,10 +825,124 @@
             show.classList.add("ignore");
         }
     })
+
+    
+    // Procedimentos hide text input
+    Array.from(document.querySelectorAll("#procedimentos input")).forEach(e => {
+        e.addEventListener("click", () => {
+            var hide = document.querySelector("#horariosSection");
+            var hide2 = document.querySelector("#querHorario");
+
+            if(["Não quero"].includes(e.value) && !e.parentNode.classList.contains("selected")){
+                hide.classList.add("ignore");
+                hide2.classList.add("ignore");
+
+            } else {
+                hide.classList.remove("ignore");
+                hide2.classList.remove("ignore");
+            }
+        })
+    });
+
+    
+    // Procedimentos hide text input
+    Array.from(document.querySelectorAll("#procedimentos input")).forEach(e => {
+        e.addEventListener("click", () => {
+            var hide = document.querySelector("#procedimentosText");
+            var input = document.querySelector("#procedimentosText .simpleInput");
+
+            if(["Com Ícones"].includes(e.value) && !e.parentNode.classList.contains("selected")){
+                hide.classList.remove("ignore");
+                input.required = true;
+
+            } else {
+                hide.classList.add("ignore");
+                input.required = false;
+            }
+        })
+    });
+    
+    // Procedimentos hide text question pautada
+    Array.from(document.querySelectorAll("#procedimentos input")).forEach(e => {
+        e.addEventListener("click", () => {
+            var hide = document.querySelector("#querHorario");
+            var input = document.querySelector("#procedimentosText .simpleInput");
+
+            var hide2 = document.querySelector("#horariosSection");
+
+            if(["Pautada"].includes(e.value) && !e.parentNode.classList.contains("selected")){
+                hide.classList.remove("ignore");
+                input.required = true;
+
+                if(hide.querySelector("input:checked").value == "Não"){
+                    hide2.classList.add("ignore");
+                }
+
+            } else if(["Não quero"].includes(e.value)) {
+
+            } else {
+                hide.classList.add("ignore");
+                input.required = false;
+
+
+                if(hide.querySelector("input:checked").value == "Não"){
+                    hide2.classList.remove("ignore");
+                }
+            }
+        })
+    });
+    
+
+
+    // Procedimentos show querHorario
+    Array.from(document.querySelectorAll("#querHorario input")).forEach(e => {
+        e.addEventListener("click", () => {
+            var hide = document.querySelector("#horariosSection");
+
+            if(["Sim"].includes(e.value)){
+                hide.classList.remove("ignore");
+
+            } else {
+                hide.classList.add("ignore");
+            }
+        })
+    });
+
 </script>
 
 <!-- setup -->
 <script>
+
+    //
+    (() => {
+        var tempoInicio = new Date();
+        tempoInicio.setDate(tempoInicio.getMonth() - 31*2);
+
+        var dataInicio = tempoInicio.getFullYear() + "-" + (tempoInicio.getMonth()+1<10?"0"+(tempoInicio.getMonth()+1): tempoInicio.getMonth()+1);
+
+        var setMaxDataFim = () => {
+            document.querySelector("#tempoFinal").value = "";
+
+            var tempoFim= new Date(document.querySelector("#tempoInicio").value);
+            tempoFim.setMonth(tempoInicio.getMonth() + (13 + (document.querySelector("#tempoFinalMesAmais").checked? 1: 0))); 
+
+            document.querySelector("#tempoFinal").min = dataInicio;
+            document.querySelector("#tempoFinal").max = tempoFim.getFullYear() + "-" + (tempoFim.getMonth()+1<10?"0"+(tempoFim.getMonth()+1): tempoFim.getMonth()+1);
+        }
+        
+        document.querySelector("#tempoFinal").max = "5000-12";
+
+        document.querySelector("#tempoInicio").min = dataInicio;
+        document.querySelector("#tempoInicio").max = "5000-12";
+
+        document.querySelector("#tempoInicio").addEventListener("input", setMaxDataFim);
+        document.querySelector("#tempoFinalMesAmais").addEventListener("input", setMaxDataFim);
+        document.querySelector("#tempoFinalSetMax").addEventListener("click", () => {
+            document.querySelector("#tempoFinal").value = document.querySelector("#tempoFinal").max;
+        });
+    })();
+
+
 
     // textbox autoadjust
     Array.from(document.querySelectorAll('.simpleInput.largeInput')).forEach(e => {
