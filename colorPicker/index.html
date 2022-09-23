@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form</title>
+
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../colors.css">
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/scrollBar.css">
+    <link rel="stylesheet" href="../style/radio.css">
+    <link rel="stylesheet" href="../style/imageCheckBox.css">
+    <link rel="stylesheet" href="../style/colorInput.css">
+    <link rel="stylesheet" href="../style/dateInput.css">
+
+    
+    <!-- Icones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+</head>
+
+
+<body>
+    
+    <header>
+        <a href="">
+            <object class="logo" data="../assets/svg/logo.svg"></object>
+        </a>
+        <h1>Inovar Personalização</h1>
+    </header>
+
+    <div class="mainContainer">
+        
+                
+
+        <div id="inputColorsCapa" class="inputDiv">
+            <h3>Seletor de Cores</h3><br>
+
+            <span class="title">Insira quais cores você gosta.</span>
+            <br>
+            <span>Toque no espaço acima dos nomes para escolher uma cor:</span>
+            <br><br><br>
+
+            <div class="inputColorContainer">
+                
+                <div class="inputColor">
+                    <input type="color" id="capaColor-1" value="#FFFFFF">
+                    <label for="capaColor-1">
+                        <div class="info">
+                            <h2>Cor:</h2>
+                            <h1 class="name">Insira</h1>
+                            <hr>
+                            <h2 class="outputColor"></h2>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="inputColor">
+                    <input type="color" id="capaColor-2" value="#FF7575">
+                    <label for="capaColor-2">
+                        <div class="info">
+                            <h2>Cor:</h2>
+                            <h1 class="name">Insira</h1>
+                            <hr>
+                            <h2 class="outputColor"></h2>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="inputColor">
+                    <input type="color" id="capaColor-3" value="#8B6EF2">
+                    <label for="capaColor-3">
+                        <div class="info">
+                            <h2>Cor:</h2>
+                            <h1 class="name">Insira</h1>
+                            <hr>
+                            <h2 class="outputColor"></h2>
+                        </div>
+                    </label>
+                </div>
+                
+                <div class="inputColor">
+                    <input type="color" id="capaColor-4" value="#5BEC92">
+                    <label for="capaColor-4">
+                        <div class="info">
+                            <h2>Cor:</h2>
+                            <h1 class="name">Insira</h1>
+                            <hr>
+                            <h2 class="outputColor"></h2>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="inputColor">
+                    <input type="color" id="capaColor-5" value="#A7CF30">
+                    <label for="capaColor-5">
+                        <div class="info">
+                            <h2>Cor:</h2>
+                            <h1 class="name">Insira</h1>
+                            <hr>
+                            <h2 class="outputColor"></h2>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="inputColor">
+                    <input type="color" id="capaColor-6" value="#AB1AE0">
+                    <label for="capaColor-6">
+                        <div class="info">
+                            <h2>Cor:</h2>
+                            <h1 class="name">Insira</h1>
+                            <hr>
+                            <h2 class="outputColor"></h2>
+                        </div>
+                    </label>
+                </div>
+
+            </div>
+
+            <p class="sideNote">Design baseado nos <a href="https://www.pantone.com.br/loja/pantone-lifestyle/livros-e-papelaria/pantone-postcards" target="_blank">Postcards da Pantone®</a></p>
+
+            <br>
+        </div>
+    </div>
+
+</body>
+
+<script src="../scripts/nameThatColor.js"></script>
+
+<script>
+    
+    // show input colors values
+    document.querySelectorAll(".inputColor").forEach(e => {
+        var input = e.querySelector("input");
+        var output = e.querySelector(".outputColor");
+        var name = e.querySelector(".name");
+
+        output.innerHTML = input.value;
+        name.innerHTML = nameThatColor(input.value).name;
+
+        e.addEventListener("input", () => {
+            output.innerHTML = input.value;
+            name.innerHTML = nameThatColor(input.value).name;
+        })
+    });
+</script>
+
+</html>
