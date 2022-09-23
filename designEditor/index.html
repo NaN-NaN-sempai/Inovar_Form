@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../colors.css">
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/scrollBar.css">
+    <link rel="stylesheet" href="../style/radio.css">
+    <link rel="stylesheet" href="../style/imageCheckBox.css">
+    <link rel="stylesheet" href="../style/colorInput.css">
+    <link rel="stylesheet" href="../style/dateInput.css">
+
+
+    <!-- style editor -->
+    <style>
+        .mainContainer {
+            width: 30%;
+            padding: 10px;
+            /* left: 40%; */
+        }
+        @media only screen and (max-width: 800px) {
+            .mainContainer {
+                width: 65%;
+            }
+        }
+        @media only screen and (max-width: 700px) {
+            .mainContainer {
+                width: 80%;
+            }
+        }
+        @media only screen and (max-width: 400px) {
+            .mainContainer {
+                width: 85%;
+            }
+        }
+
+        .editor {
+            width: 100%;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .editor .container {
+            width: 100%;
+            background: red;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .editor .container * {
+            user-select: none;
+            padding: 10px;
+        }
+
+        .editor .container .selected {
+            outline: 5px solid cyan;
+            border-radius: 15px;
+            animation: infinite blinkSelected 1.5s ease-in-out;
+        }
+        
+        .editor .container .selected[data-moving="true"] {
+            animation-play-state: paused;
+            animation-duration: 0s;
+        }
+
+
+        @keyframes blinkSelected {
+            from {
+                outline-color: cyan;
+                outline-offset: 0px;
+                text-decoration: underline cyan;
+            }  
+            50% {
+                outline-color: yellow;
+                outline-offset: -7px;
+                text-decoration: underline yellow;
+            } 
+            to {
+                outline-color: cyan;
+                outline-offset: 0px;
+                text-decoration: underline cyan;
+            }          
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="">
+            <object class="logo" data="../assets/svg/logo.svg"></object>
+        </a>
+        <h1>Formulário de Personalização das Agendas e Planners</h1>
+    </header>
+
+    <div class="mainContainer">
+        <h2 class="title">
+            Personalize sua Capa
+        </h2>
+        <p>
+            Texto exemplo descrição form, lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non nulla et ligula scelerisque aliquam sit amet vel risus. Donec ex orci, lacinia in libero a, condimentum mollis nibh.
+        </p>
+        <br>
+    </div>
+
+    <div class="mainContainer" data-editor="Capa">
+        <h2 class="title">
+            Capa
+        </h2>
+        
+        <div class="editor">
+            <div class="container">
+                <p class="editorMovable selected" style="position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);">a</p>
+
+                <p class="editorMovable" style="position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);">teste</p>
+
+                <img src="../assets/Images/acabamentos/brilhoComum.jpg" alt="" class="editorMovable">
+
+                <img src="../assets/Images/acabamentos/GlitterLuxo.jpg" alt="" class="editorMovable">
+            </div>
+        </div>
+
+        <br>
+    </div>
+
+    <div class="mainContainer" data-editor="Contra-Capa">
+        <h2 class="title">
+            Contra-Capa
+        </h2>
+
+        <br>
+        
+        <div class="editor">
+            <div class="container"></div>
+        </div>
+
+        <br>
+    </div>
+
+</body>
+
+<!-- unique id -->
+<script>
+    var getId = (type, to) => `${to? to: "movableObject"}_${type? type+"_": ""}${Date.now() + Math.random()}`;
+</script>
+
+<!-- porcentage add margin and padding -->
+<script>
+    var porcPadding = (porc, padding) => {
+        var calcPorc = ((100-porc)/100);
+        var semiPadding = padding * calcPorc;
+        var endPadding = (semiPadding - (padding / 2)) * 2;
+        return porc + endPadding;
+    }
+    var porcMargin = (porc, padding) => {
+        var calcPorc = ((100-porc)/100);
+        var semiPadding = padding * calcPorc;
+        var endPadding = (semiPadding - (padding / 2)) * 2;
+        return porc - endPadding;
+    }
+</script>
+
+<!-- move inside editor -->
+<script>
+    var editorMousePos = [];
+
+    document.querySelectorAll(".editor .container").forEach(e => {
+        e.id = getId("container", "editor-"+editorMousePos.length);
+
+        e.addEventListener("mousemove", (evt) => {
+            
+            evt.preventDefault();
+
+            var editor = e;
+
+            var {clientHeight, clientWidth} = editor;
+            var {top, right} = editor.getBoundingClientRect();
+
+            var {clientX, clientY} = evt;
+
+            if(clientY >= top && clientY <= top + clientHeight &&
+               clientX <= right && clientX >= right - clientWidth){
+
+                var minX = clientX - right + clientWidth, maxX = clientWidth;
+                var minY = clientY - top, maxY = clientHeight;
+
+                var porcX = ((minX / maxX) * 100);
+                var porcY = ((minY / maxY) * 100);
+
+                
+                var find = editorMousePos.find(f => f.id == e.id);
+
+                if(find){
+                    find.x = porcX;
+                    find.y = porcY;
+
+                } else {
+                    editorMousePos.push({
+                        id: e.id,
+                        x: porcX,
+                        y: porcY
+                    });
+                }
+            }
+        })
+    });
+
+
+    addEventListener("mousedown", (evt) => {
+        var e = event.target;
+
+        if(!e.classList.contains("editorMovable")) return;
+
+        document.querySelectorAll(".selected").forEach(fe => fe.classList.remove("selected"));
+
+        e.classList.add("selected");
+        e.dataset.moving = true;
+    });
+
+    addEventListener("mousemove", (evt) => {
+        var evtCather = evt.path.find(e => e?.classList?.contains("container"));
+        if(!evtCather) return;
+
+        var e = document.querySelector(".editorMovable[data-moving='true']");
+
+        if(e?.parentNode?.id != evtCather.id) return
+
+        if(e?.dataset?.moving == "true"){
+            evt.preventDefault();
+
+            var editor = e.parentNode;
+
+            var {x, y} = editorMousePos?.find(f => f.id == editor.id) || {x:50, y:50};
+
+            var trueX = (x? x: 50);
+            var trueY = (y? y: 50);
+
+            e.style.position = "absolute";
+                    
+            e.style.left = trueX + "%";
+            e.style.top  = trueY + "%";
+
+            e.style.transform = `translate(-${porcPadding(trueX, 50)}%, -${porcPadding(trueY, 50)}%)`;
+        }
+    });
+    
+    addEventListener("mouseup", (evt) => {
+        var e = event.target;
+
+        var movingObj = Array.from(document.querySelectorAll(".editorMovable[data-moving='true']"))
+            .forEach(fe => {
+                fe.dataset.moving = false;
+            });
+    });
+</script>
+
+<!-- auto resize -->
+<script>
+    var executeAllEditors = () => {
+        document.querySelectorAll(".editor .container").forEach(e => {
+            var width = e.clientWidth;
+            e.style.height = `${1.4 * width}px`;
+        });
+    }
+
+    executeAllEditors();
+
+    addEventListener('resize', () => {
+        executeAllEditors();
+    })
+</script>
+</html>
