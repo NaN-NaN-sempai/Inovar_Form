@@ -62,12 +62,13 @@
         .editor .container .selected {
             outline: 5px solid cyan;
             border-radius: 15px;
-            animation: infinite blinkSelected 1.5s ease-in-out;
+            animation: infinite blinkSelected 1.5s linear;
         }
         
         .editor .container .selected[data-moving="true"] {
             animation-play-state: paused;
             animation-duration: 0s;
+            text-decoration: underline cyan;
         }
 
 
@@ -116,10 +117,16 @@
         
         <div class="editor">
             <div class="container">
-                <p class="editorMovable selected" style="position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);">a</p>
+                <p class="editorMovable selected" id="tes" style="position: absolute;
+                top: 60%;
+                left: 70%;
+                transform: translate(-50%, -50%);
+
+                text-align: left;
+                
+                white-space: nowrap;
+                overflow: hidden;
+                ">a</p>
 
                 <p class="editorMovable" style="position: absolute;
                 top: 50%;
@@ -131,6 +138,8 @@
                 <img src="../assets/Images/acabamentos/GlitterLuxo.jpg" alt="" class="editorMovable">
             </div>
         </div>
+
+        <textarea name="" oninput="tes.innerHTML = this.value.replaceAll('\n', '<br>')" cols="30" rows="10"></textarea>
 
         <br>
     </div>
