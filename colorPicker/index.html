@@ -209,19 +209,6 @@
         });
 
     });
-    function myFunction() {
-        var copyText = document.getElementById("myInput");
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        navigator.clipboard
-        .writeText(copyText.value)
-        .then(() => {
-            alert("successfully copied");
-        })
-        .catch(() => {
-            alert("something went wrong");
-        });
-    }
 
     /* button display copied */
     var copiedInterval;
@@ -250,7 +237,9 @@
                         button.classList.remove("success");
                     }, 1500);
                 })
-                .catch(() => {
+                .catch((err) => {
+                    console.log(err);
+
                     button.innerHTML = `Ocorreu um erro <i class="fa fa-exclamation" aria-hidden="true"></i>`;
                     button.classList.add("error");
 
