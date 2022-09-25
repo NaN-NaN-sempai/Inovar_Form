@@ -78,6 +78,7 @@
         .editor .container * {
             user-select: none;
             padding: 10px;
+            touch-action: none;
         }
 
         .editor .container .selected {
@@ -188,17 +189,17 @@
 
 <!-- porcentage add margin and padding -->
 <script>
-    var porcPadding = (porc, padding) => {
+    const calculateOffset = (porc, padding) => {
         var calcPorc = ((100-porc)/100);
         var semiPadding = padding * calcPorc;
-        var endPadding = (semiPadding - (padding / 2)) * 2;
-        return porc + endPadding;
+        var offset = (semiPadding - (padding / 2)) * 2;
+        return offset;
     }
-    var porcMargin = (porc, padding) => {
-        var calcPorc = ((100-porc)/100);
-        var semiPadding = padding * calcPorc;
-        var endPadding = (semiPadding - (padding / 2)) * 2;
-        return porc - endPadding;
+    const porcPadding = (porc, padding) => {
+        return porc + calculateOffset(porc, padding);
+    }
+    const porcMargin = (porc, padding) => {
+        return porc - calculateOffset(porc, padding);
     }
 </script>
 
@@ -209,16 +210,13 @@
     document.querySelectorAll(".editor .container").forEach(e => {
         e.id = getId("container", "editor-"+editorMousePos.length);
 
-        e.addEventListener("mousemove", (evt) => {
-            
-            evt.preventDefault();
-
+        const moveHandler = (evt, getMovement) => {
             var editor = e;
-
+            
             var {clientHeight, clientWidth} = editor;
             var {top, right} = editor.getBoundingClientRect();
-
-            var {clientX, clientY} = evt;
+            
+            var {clientX, clientY} = getMovement;
 
             if(clientY >= top && clientY <= top + clientHeight &&
                clientX <= right && clientX >= right - clientWidth){
@@ -244,28 +242,41 @@
                     });
                 }
             }
-        })
+        }
+
+        const containerMousemove = (evt) => moveHandler(evt, evt);
+
+        const containerTouchMove = (evt) => moveHandler(evt, evt.targetTouches[0]);
+
+        
+        e.addEventListener("mousemove", containerMousemove);
+        e.addEventListener("touchmove", containerTouchMove);
     });
 
 
-    addEventListener("mousedown", (evt) => {
+    const moveStart = (evt) => {
         var e = event.target;
 
         if(!e.classList.contains("editorMovable")) return;
+
+        evt.preventDefault();
 
         document.querySelectorAll(".selected").forEach(fe => fe.classList.remove("selected"));
 
         e.classList.add("selected");
         e.dataset.moving = true;
-    });
+    }
 
-    addEventListener("mousemove", (evt) => {
+    addEventListener("mousedown", moveStart);
+    addEventListener("touchstart", moveStart);
+
+    const moveContinue = (evt) => {
         var evtCather = evt.path.find(e => e?.classList?.contains("container"));
         if(!evtCather) return;
 
         var e = document.querySelector(".editorMovable[data-moving='true']");
 
-        if(e?.parentNode?.id != evtCather.id) return
+        if(e?.parentNode?.id != evtCather.id) return;
 
         if(e?.dataset?.moving == "true"){
             evt.preventDefault();
@@ -284,16 +295,32 @@
 
             e.style.transform = `translate(-${porcPadding(trueX, 50)}%, -${porcPadding(trueY, 50)}%)`;
         }
-    });
+    }
     
-    addEventListener("mouseup", (evt) => {
+    addEventListener("mousemove", moveContinue);
+    addEventListener("touchmove", moveContinue);
+    
+    const moveStop = (evt) => {
         var e = event.target;
 
         var movingObj = Array.from(document.querySelectorAll(".editorMovable[data-moving='true']"))
             .forEach(fe => {
                 fe.dataset.moving = false;
             });
-    });
+    }
+    
+    addEventListener("mouseup", moveStop);
+    addEventListener("touchend", moveStop);
+
+
+    /* prevent contextmenu in movable objects */
+    addEventListener("contextmenu", (evt) => {
+        var e = event.target;
+
+        if(!e.classList.contains("editorMovable")) return;
+
+        evt.preventDefault();
+    })
 </script>
 
 <!-- auto resize -->

@@ -48,8 +48,8 @@
             <div class="inputColorContainer">
                 
                 <div class="inputColor">
-                    <input type="color" id="capaColor-1" value="#FFFFFF">
-                    <label for="capaColor-1">
+                    <input type="color" id="inputId-1" value="#FFFFFF">
+                    <label for="inputId-1">
                         <div class="info">
                             <h2>Cor:</h2>
                             <h1 class="name">Insira</h1>
@@ -60,8 +60,8 @@
                 </div>
 
                 <div class="inputColor">
-                    <input type="color" id="capaColor-2" value="#FF7575">
-                    <label for="capaColor-2">
+                    <input type="color" id="inputId-2" value="#FF7575">
+                    <label for="inputId-2">
                         <div class="info">
                             <h2>Cor:</h2>
                             <h1 class="name">Insira</h1>
@@ -72,8 +72,8 @@
                 </div>
 
                 <div class="inputColor">
-                    <input type="color" id="capaColor-3" value="#8B6EF2">
-                    <label for="capaColor-3">
+                    <input type="color" id="inputId-3" value="#8B6EF2">
+                    <label for="inputId-3">
                         <div class="info">
                             <h2>Cor:</h2>
                             <h1 class="name">Insira</h1>
@@ -84,8 +84,8 @@
                 </div>
                 
                 <div class="inputColor">
-                    <input type="color" id="capaColor-4" value="#5BEC92">
-                    <label for="capaColor-4">
+                    <input type="color" id="inputId-4" value="#5BEC92">
+                    <label for="inputId-4">
                         <div class="info">
                             <h2>Cor:</h2>
                             <h1 class="name">Insira</h1>
@@ -96,8 +96,8 @@
                 </div>
 
                 <div class="inputColor">
-                    <input type="color" id="capaColor-5" value="#A7CF30">
-                    <label for="capaColor-5">
+                    <input type="color" id="inputId-5" value="#A7CF30">
+                    <label for="inputId-5">
                         <div class="info">
                             <h2>Cor:</h2>
                             <h1 class="name">Insira</h1>
@@ -108,8 +108,8 @@
                 </div>
 
                 <div class="inputColor">
-                    <input type="color" id="capaColor-6" value="#AB1AE0">
-                    <label for="capaColor-6">
+                    <input type="color" id="inputId-6" value="#AB1AE0">
+                    <label for="inputId-6">
                         <div class="info">
                             <h2>Cor:</h2>
                             <h1 class="name">Insira</h1>
@@ -129,12 +129,35 @@
 
 </body>
 
+<!-- get colors from url -->
+<script>
+    
+    var params = document.location.href.replace(document.location.origin+document.location.pathname, "");
+
+    if(params[0] == "#"){
+        var param = params.split("=")[1]?.split("&")[0];
+
+        if(params.includes("colors")){
+            var colors = param.split(",");
+
+            colors.forEach((e, i) => {
+                var inputEl = document.querySelector("#inputId-"+(i+1));
+
+                if(!inputEl) return;
+
+                inputEl.value = e;
+            })
+        }
+    }
+</script>
+
 <script src="../scripts/nameThatColor.js"></script>
 
 <script>
+    var inputList = document.querySelectorAll(".inputColor");
     
-    // show input colors values
-    document.querySelectorAll(".inputColor").forEach(e => {
+    inputList.forEach(e => {
+        // show input colors values
         var input = e.querySelector("input");
         var output = e.querySelector(".outputColor");
         var name = e.querySelector(".name");
@@ -145,7 +168,14 @@
         e.addEventListener("input", () => {
             output.innerHTML = input.value;
             name.innerHTML = nameThatColor(input.value).name;
-        })
+
+            // insert color on url
+            var listText = Array.from(inputList).map(m => m.querySelector("input").value).join(",");
+
+            var urlText = document.location.href.split("#")[0];
+
+            document.location.href = urlText + "#colors=" + listText + "&preventEdit";
+        });
     });
 </script>
 
