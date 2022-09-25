@@ -154,8 +154,12 @@
 <script src="../scripts/nameThatColor.js"></script>
 
 <script>
+    var preventThrottlingCounter = 0, preventThrottlingMax = 50;
+
+    setInterval(() => preventThrottlingCounter = 0, 1000);
+
     var inputList = document.querySelectorAll(".inputColor");
-    
+
     inputList.forEach(e => {
         // show input colors values
         var input = e.querySelector("input");
@@ -168,14 +172,16 @@
         e.addEventListener("input", () => {
             output.innerHTML = input.value;
             name.innerHTML = nameThatColor(input.value).name;
+        });
 
-            // insert color on url
+        // insert color on url
+        e.addEventListener("change", () => {
             var listText = Array.from(inputList).map(m => m.querySelector("input").value).join(",");
 
             var urlText = document.location.href.split("#")[0];
 
             document.location.href = urlText + "#colors=" + listText + "&preventEdit";
-        });
+        })
     });
 </script>
 
