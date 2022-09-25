@@ -9,4 +9,7 @@
     --secondDark: grey;
 
     --mandatory: #d93025;
+
+    --error: var(--mandatory);
+    --success: green;
 }

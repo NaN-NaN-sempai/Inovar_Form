@@ -21,6 +21,41 @@
     <!-- Icones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 
+    <style>
+        .mainContainer .shareColors{
+            border: 3px solid var(--secondColor);
+            color: var(--mainDark);
+            background: var(--mainColor);
+            padding: 10px;
+            border-radius: 50px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            align-items: center;
+            cursor: pointer;
+            margin: auto;
+            font-size: 17px;
+            margin-top: 10px;
+        }
+        .mainContainer .shareColors.success {
+            color: var(--mainColor);
+            background: var(--success);
+        }
+        .mainContainer .shareColors.success i {
+            color: var(--mainColor);
+        }
+        .mainContainer .shareColors.error {
+            color: var(--mainColor);
+            background: var(--error);
+        }
+        .mainContainer .shareColors.error i {
+            color: var(--mainColor);
+        }
+        .mainContainer .shareColors i {
+            padding-left: 10px;
+            font-size: 20px;
+        }
+    </style>
 </head>
 
 
@@ -34,16 +69,17 @@
     </header>
 
     <div class="mainContainer">
-        
-                
-
         <div id="inputColorsCapa" class="inputDiv">
             <h3>Seletor de Cores</h3><br>
 
             <span class="title">Insira quais cores você gosta.</span>
             <br>
             <span>Toque no espaço acima dos nomes para escolher uma cor:</span>
-            <br><br><br>
+            <br><br>
+            
+            <button class="shareColors">Compartilhar Cores <i class="fa fa-share-alt-square" aria-hidden="true"></i></button>
+
+            <br><br>
 
             <div class="inputColorContainer">
                 
@@ -126,7 +162,7 @@
             <br>
         </div>
     </div>
-
+    <input type="text" style="display: none" id="colorListOutput">
 </body>
 
 <!-- get colors from url -->
@@ -145,7 +181,7 @@
 
                 if(!inputEl) return;
 
-                inputEl.value = e;
+                inputEl.value = "#"+e;
             })
         }
     }
@@ -155,11 +191,9 @@
 
 <script>
     var preventThrottlingCounter = 0, preventThrottlingMax = 50;
-
     setInterval(() => preventThrottlingCounter = 0, 1000);
 
     var inputList = document.querySelectorAll(".inputColor");
-
     inputList.forEach(e => {
         // show input colors values
         var input = e.querySelector("input");
@@ -174,15 +208,59 @@
             name.innerHTML = nameThatColor(input.value).name;
         });
 
-        // insert color on url
-        e.addEventListener("change", () => {
-            var listText = Array.from(inputList).map(m => m.querySelector("input").value).join(",");
+    });
+    function myFunction() {
+        var copyText = document.getElementById("myInput");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        navigator.clipboard
+        .writeText(copyText.value)
+        .then(() => {
+            alert("successfully copied");
+        })
+        .catch(() => {
+            alert("something went wrong");
+        });
+    }
+
+    /* button display copied */
+    var copiedInterval;
+    var button = document.querySelector(".shareColors");
+    button.addEventListener("click", () => {
+            var listText = Array.from(inputList).map(m => m.querySelector("input").value.toUpperCase().replace("#","")).join(",");
 
             var urlText = document.location.href.split("#")[0];
 
-            document.location.href = urlText + "#colors=" + listText + "&preventEdit";
-        })
-    });
+            var colorListOutput = document.querySelector("#colorListOutput");
+            colorListOutput.value = urlText + "#colors=" + listText + "&preventEdit";
+            
+            var defaultButtonText = `Compartilhar Cores <i class="fa fa-share-alt-square" aria-hidden="true"></i>`;
+
+            colorListOutput.select();
+            colorListOutput.setSelectionRange(0, 99999);
+            navigator.clipboard
+                .writeText(colorListOutput.value)
+                .then(() => {
+                    button.innerHTML = `Link Copiado <i class="fa fa-thumbs-up" aria-hidden="true"></i>`;
+                    button.classList.add("success");
+
+                    clearInterval(copiedInterval);
+                    copiedInterval = setTimeout(() => {
+                        button.innerHTML = defaultButtonText;
+                        button.classList.remove("success");
+                    }, 1500);
+                })
+                .catch(() => {
+                    button.innerHTML = `Ocorreu um erro <i class="fa fa-exclamation" aria-hidden="true"></i>`;
+                    button.classList.add("error");
+
+                    clearInterval(copiedInterval);
+                    copiedInterval = setTimeout(() => {
+                        button.innerHTML = defaultButtonText;
+                        button.classList.remove("error");
+                    }, 1500);
+                });
+    })
 </script>
 
 </html>
