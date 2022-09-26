@@ -7,8 +7,8 @@ var acabamentos = [{
     },
 
     {
-        name: "Fosco",
-        sendValue: "Fosco Gratuito",
+        name: "Fosco Comum",
+        sendValue: "Fosco Comum",
         price: "Gratuito",
         img: "./assets/Images/acabamentos/fosco.jpg",
         favorite: false
@@ -16,7 +16,7 @@ var acabamentos = [{
 
     {
         name: "Brilho Especial HI-TAC",
-        sendValue: "Brilho Especial HI-TAC",
+        sendValue: "Brilho HI-TAC",
         price: "R$ 6,00",
         img: "./assets/Images/acabamentos/brilhoComumHITAC.jpg",
         favorite: false
