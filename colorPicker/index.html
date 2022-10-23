@@ -212,45 +212,78 @@
 
     });
 
+    // captalize first letter of each word 
+    String.prototype.toTitleCase = function (){
+        return this
+            .toLowerCase().split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    };
+
     /* button display copied */
     var copiedInterval;
     var button = document.querySelector(".shareColors");
     button.addEventListener("click", () => {
-            var listText = Array.from(inputList).map(m => m.querySelector("input").value.toUpperCase().replace("#","")).join(",");
+        var listText = Array.from(inputList).map(m => m.querySelector("input").value.toUpperCase().replace("#","")).join(",");
+        var nameListText = Array.from(inputList).map(m => m.querySelector(".name").innerText.toTitleCase()).join(", ");
 
-            var urlText = document.location.href.split("#")[0];
+        var urlText = document.location.href.split("#")[0];
 
-            var colorListOutput = document.querySelector("#colorListOutput");
-            colorListOutput.value = urlText + "#colors=" + listText + "&preventEdit";
-            
-            var defaultButtonText = `Compartilhar Cores <i class="fa fa-share-alt-square" aria-hidden="true"></i>`;
+        var colorListOutput = document.querySelector("#colorListOutput");
+        var shareText = colorListOutput.value = urlText + "#colors=" + listText + "&preventEdit";
+        
+        var defaultButtonText = `Compartilhar Cores <i class="fa fa-share-alt-square" aria-hidden="true"></i>`;
+        
+        if(navigator.share) {
+            navigator.share({
+                title: 'Minhas Cores: '+nameListText,
+                text: 'Seletor de Cores | Inovar Personalização',
+                url: shareText,
+            })
+            .then(() => {
+                button.innerHTML = `Compartilhado <i class="fa fa-thumbs-up" aria-hidden="true"></i>`;
+                button.classList.add("success");
 
+                clearInterval(copiedInterval);
+                        copiedInterval = setTimeout(() => {
+                            button.innerHTML = defaultButtonText;
+                            button.classList.remove("success");
+                        }, 1500);
+            })
+            .catch((error) => console.log('Erro ao compartilhar:\n' + error));
+
+        } else {
             colorListOutput.select();
-            colorListOutput.setSelectionRange(0, 99999);
-            navigator.clipboard
-                .writeText(colorListOutput.value)
-                .then(() => {
-                    button.innerHTML = `Link Copiado <i class="fa fa-thumbs-up" aria-hidden="true"></i>`;
-                    button.classList.add("success");
+            colorListOutput.setSelectionRange(0, colorListOutput.value.length);
+            if(navigator.clipboard){
+                navigator.clipboard
+                    .writeText(shareText)
+                    .then(() => {
+                        button.innerHTML = `Link Copiado <i class="fa fa-thumbs-up" aria-hidden="true"></i>`;
+                        button.classList.add("success");
 
-                    clearInterval(copiedInterval);
-                    copiedInterval = setTimeout(() => {
-                        button.innerHTML = defaultButtonText;
-                        button.classList.remove("success");
-                    }, 1500);
-                })
-                .catch((err) => {
-                    console.log(err);
+                        clearInterval(copiedInterval);
+                        copiedInterval = setTimeout(() => {
+                            button.innerHTML = defaultButtonText;
+                            button.classList.remove("success");
+                        }, 1500);
+                    })
+                    .catch((err) => {
+                        console.log(err);
 
-                    button.innerHTML = `Ocorreu um erro <i class="fa fa-exclamation" aria-hidden="true"></i>`;
-                    button.classList.add("error");
+                        button.innerHTML = `Ocorreu um erro <i class="fa fa-exclamation" aria-hidden="true"></i>`;
+                        button.classList.add("error");
 
-                    clearInterval(copiedInterval);
-                    copiedInterval = setTimeout(() => {
-                        button.innerHTML = defaultButtonText;
-                        button.classList.remove("error");
-                    }, 1500);
-                });
+                        clearInterval(copiedInterval);
+                        copiedInterval = setTimeout(() => {
+                            button.innerHTML = defaultButtonText;
+                            button.classList.remove("error");
+                        }, 1500);
+                    });
+            } else {
+                alert("Seu navegador não suporta copiar a função de copiar.");
+            }
+        }
     })
 </script>
 
