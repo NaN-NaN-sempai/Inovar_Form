@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../colors.css">
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/scrollBar.css">
+    <link rel="stylesheet" href="../style/radio.css">
+    <link rel="stylesheet" href="../style/imageCheckBox.css">
+    <link rel="stylesheet" href="../style/gradientInput.css">
+    
+    <!-- Icones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+    <!-- Endereco -->
+    <div class="mainContainer">
+        <h2 class="title">
+            Protótipo
+        </h2>
+        <hr><br>
+
+        <span class="title">Entrada de Degradé</span>
+        <br><br>
+
+        <div class="gradientInput">
+            <div class="gradientDisplay">
+                <div class="indicator" style="left: 0%" data-color="#000000">
+                    <div class="knob selected">
+                        <span>0%</span>
+                    </div>
+                </div>
+
+                <div class="indicator" style="left: 100%" data-color="#FF0000">
+                    <div class="knob">
+                        <span>100%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="controllers">
+                <i class="fa fa-eye-slash button hideKnobs" title="Esconder Marcadores" aria-hidden="true"></i>
+
+                <label for="simplyColotInput1" class="simplyColorInput"  title="Mudar a Cor do Marcado Selecionado" >
+                    <input id="simplyColotInput1" class="inputColor" type="color">
+                    <span>ColorName</span>
+                </label>
+
+                <i class="fa fa-trash button remove" title="Apagar Marcador Selecionado"  aria-hidden="true"></i>
+            </div>
+        </div>
+        <br><br>
+
+        <span class="title">Dourado</span>
+        <br>
+        <br>
+
+        <div class="gradientInput">
+            <div class="gradientDisplay" style="background: linear-gradient(to right, rgb(235, 184, 26) 0%, rgb(226, 177, 25) 50.0919%, rgb(186, 127, 19) 72.6145%, rgb(253, 245, 130) 100%);">
+                <div class="indicator" style="left: 0%; background: rgb(235, 184, 26); z-index: 1; opacity: 1;" data-color="#ebb81a">
+                    <div class="knob selected">
+                        <span>0%</span>
+                    </div>
+                </div>
+
+                <div class="indicator" style="left: 100%; background: rgb(253, 245, 130); z-index: 1; opacity: 1;" data-color="#fdf582">
+                    <div class="knob">
+                        <span>100%</span>
+                    </div>
+                </div>
+                <div class="indicator" data-color="#e2b119" style="left: 50.0919%; background: rgb(226, 177, 25); z-index: 10; opacity: 1;">
+                    <div class="knob">
+                        <span>50%</span>
+                    </div>
+                </div>
+                <div class="indicator" data-color="#ba7f13" style="left: 72.6145%; background: rgb(186, 127, 19); z-index: 1; opacity: 1;">
+                    <div class="knob">
+                        <span>73%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="controllers">
+                <i class="fa fa-eye-slash button hideKnobs" title="Esconder Marcadores" aria-hidden="true"></i>
+
+                <label for="simplyColotInput2" class="simplyColorInput" title="Mudar a Cor do Marcado Selecionado">
+                    <input id="simplyColotInput2" class="inputColor" type="color">
+                    <span>Gold Tips</span>
+                </label>
+
+                <i class="fa fa-trash button remove" title="Apagar Marcador Selecionado" aria-hidden="true"></i>
+            </div>
+        </div>
+        <br><br>
+        
+        <span class="title">Rosê Gold</span>
+        <br><br>
+
+        <div class="gradientInput">
+            <div class="gradientDisplay" style="background: linear-gradient(to right, rgb(189, 122, 125) 0%, rgb(245, 207, 196) 32.6968%, rgb(192, 112, 113) 68.0539%, rgb(155, 92, 94) 100%);">
+                <div class="indicator" style="left: 0%; background: rgb(189, 122, 125); z-index: 10;" data-color="#bd7a7d">
+                    <div class="knob selected">
+                        <span>0%</span>
+                    </div>
+                </div>
+
+                <div class="indicator" style="left: 100%; background: rgb(155, 92, 94); z-index: 1;" data-color="#9b5c5e">
+                    <div class="knob">
+                        <span>100%</span>
+                    </div>
+                </div>
+            <div class="indicator" data-color="#f5cfc4" style="left: 32.6968%; background: rgb(245, 207, 196); z-index: 1;"><div class="knob"><span>33%</span></div></div><div class="indicator" data-color="#c07071" style="left: 68.0539%; background: rgb(192, 112, 113); z-index: 1;"><div class="knob"><span>68%</span></div></div></div>
+            <div class="controllers">
+                <i class="fa fa-eye-slash button hideKnobs" title="Esconder Marcadores" aria-hidden="true"></i>
+
+                <label for="simplyColotInput3" class="simplyColorInput" title="Mudar a Cor do Marcado Selecionado">
+                    <input id="simplyColotInput3" class="inputColor" type="color">
+                    <span>Old Rose</span>
+                </label>
+
+                <i class="fa fa-trash button remove" title="Apagar Marcador Selecionado" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<script src="../scripts/nameThatColor.js"></script>
+
+<!-- controllers -->
+<script>
+document.querySelectorAll(".gradientInput").forEach(gi => {
+    var remove = gi.querySelector(".remove");
+        remove?.addEventListener("click", () => {
+            var gradientHolder = gi.querySelector(".gradientDisplay");
+            var knobs = gradientHolder.querySelectorAll(".knob");
+            var selected = gradientHolder.querySelector(".selected");
+
+            if(knobs.length > 2){
+                selected.parentNode.remove();
+                knobs = gradientHolder.querySelectorAll(".knob");
+                
+                knobs[0].classList.add("selected");
+                selected = knobs[0];
+
+                var simplyColorInput = gi.querySelector(".simplyColorInput .inputColor");
+                var color = selected.parentNode.dataset.color;
+                simplyColorInput.parentNode.querySelector("span").innerHTML = nameThatColor(color).name;
+                simplyColorInput.parentNode.querySelector(".inputColor").value = nameThatColor(color).hex;
+
+                setGradient(gradientHolder);
+            }
+        });
+
+    const hideMouseDown = () => {
+        var gradientHolder = gi.querySelector(".gradientDisplay");
+        gradientHolder.querySelectorAll(".knob").forEach(k => k.parentNode.style.opacity = 0);
+    }
+    const hideMouseUp = () => {
+        var gradientHolder = gi.querySelector(".gradientDisplay");
+        gradientHolder.querySelectorAll(".knob").forEach(k => k.parentNode.style.opacity = 1);
+    }
+    var hideKnobs = gi.querySelector(".hideKnobs");
+    
+        hideKnobs?.addEventListener("mousedown", hideMouseDown);
+        hideKnobs?.addEventListener("touchstart", hideMouseDown);
+        hideKnobs?.addEventListener("mouseup", hideMouseUp);
+        hideKnobs?.addEventListener("touchend", hideMouseUp);
+
+    var simplyColorInput = gi.querySelector(".simplyColorInput .inputColor");
+    if(simplyColorInput){
+        var gradientHolder = gi.querySelector(".gradientDisplay");
+        var selected = gradientHolder.querySelector(".selected") || gradientHolder.querySelectorAll(".knob")[0];
+
+        var color = selected.parentNode.dataset.color;
+        simplyColorInput.parentNode.querySelector("span").innerHTML = nameThatColor(color).name;
+        simplyColorInput.parentNode.querySelector(".inputColor").value = nameThatColor(color).hex;
+    }
+    simplyColorInput?.addEventListener("input", () => {
+        var gradientHolder = gi.querySelector(".gradientDisplay");
+        var color = simplyColorInput.value;
+        simplyColorInput.parentNode.querySelector("span").innerHTML = nameThatColor(color).name;
+
+        var selected = gradientHolder.querySelector(".selected");
+            selected.parentNode.dataset.color = color;
+            
+        setGradient(gradientHolder);
+    });
+
+});
+</script>
+
+<!-- set Gradient -->
+<script>
+    const setGradient = (gradientHolder) => {
+        var colors = Array.from(gradientHolder.querySelectorAll(".indicator"));
+
+        var sortedColors = colors.sort((a, b) => {
+            a.style.background = a.dataset.color;
+            b.style.background = b.dataset.color;
+            return parseFloat(a.style.left) - parseFloat(b.style.left);
+        })
+        .map(c => c.dataset.color + " " +  c.style.left).join(", ");
+
+        gradientHolder.style.background = `linear-gradient(to right, ${sortedColors})`;
+    }
+
+    document.querySelectorAll(".gradientDisplay").forEach(gh => {
+        setGradient(gh);
+
+        const clickHandler = (evt, eventSource) => {
+            if(evt.target.classList.contains("knob")) return;
+
+            var gradientHolder = evt.target;
+
+            
+            var {clientWidth} = gradientHolder;
+            var {right} = gradientHolder.getBoundingClientRect();
+            
+            var {clientX} = eventSource;
+
+            if(clientX <= right && clientX >= right - clientWidth){
+
+                var minX = clientX - right + clientWidth, maxX = clientWidth;
+
+                var porcX = ((minX / maxX) * 100);
+
+                gh.querySelector(".selected").classList.remove("selected");
+
+                var indicator = document.createElement("div");
+                    indicator.classList.add("indicator");
+                    indicator.dataset.color = "#000000";
+                    indicator.style.left =  porcX + "%";
+
+                var knob = document.createElement("div");
+                    knob.classList.add("knob");
+                    knob.classList.add("selected");
+                    knob.addEventListener("mousedown", moveStart);
+                    knob.addEventListener("touchstart", moveStart);
+
+                var span = document.createElement("span");
+                    span.innerHTML = porcX.toFixed(0) + "%";
+
+                knob.append(span);
+
+                indicator.append(knob);
+
+                gh.append(indicator);
+
+                gh.parentNode.querySelector(".simplyColorInput span").innerHTML = nameThatColor(indicator.dataset.color).name;
+                gh.parentNode.querySelector(".simplyColorInput .inputColor").value = nameThatColor(indicator.dataset.color).hex;
+            }
+
+            setGradient(gradientHolder)
+        }
+
+        gh.addEventListener("mousedown", (evt) => clickHandler(evt, evt));
+        gh.addEventListener("touchstart", (evt) => clickHandler(evt, evt.targetTouches[0]));
+    });
+
+
+</script>
+
+<!-- evt handlers -->
+<script>
+    const moveStart = (evt) => {
+        var e = event.target;
+
+        if(!e.classList.contains("knob")) return;
+
+        evt.preventDefault();
+
+        var gradientHolder = e.parentNode.parentNode;
+        gradientHolder.querySelectorAll(".selected").forEach(fe => fe.classList.remove("selected"));
+
+        gradientHolder.querySelectorAll(".knob").forEach(k => k.parentNode.style.zIndex = 1);
+        e.parentNode.style.zIndex = 10;
+
+        e.classList.add("selected");
+        e.classList.add("moving");
+
+        var colorInput = e.parentNode.parentNode.parentNode.querySelector(".controllers .simplyColorInput");
+        colorInput.querySelector("span").innerHTML = nameThatColor(e.parentNode.dataset.color).name;
+        colorInput.querySelector(".inputColor").value = nameThatColor(e.parentNode.dataset.color).hex;
+
+    }
+
+    const moveContinue = (evt, evtSource) => {
+        var moving = document.querySelector(".moving");
+
+        if(!moving) return
+
+        var gradientHolder = moving.parentNode.parentNode;
+        
+        var {clientWidth} = gradientHolder;
+        var {right} = gradientHolder.getBoundingClientRect();
+        
+        var {clientX} = evtSource;
+
+        if(clientX <= right && clientX >= right - clientWidth){
+
+            var minX = clientX - right + clientWidth, maxX = clientWidth;
+
+            var porcX = ((minX / maxX) * 100);
+
+            moving.parentNode.style.left = porcX + "%";
+
+            moving.querySelector("span").innerHTML = porcX.toFixed(0) + "%";
+
+        } else if(clientX < right){
+            moving.querySelector("span").innerHTML =  "0%";
+
+        } else if(clientX > right - clientWidth){
+            moving.querySelector("span").innerHTML =  "100%";
+        }
+
+        setGradient(gradientHolder)
+    }
+    
+    const moveStop = (evt) => {
+        document.querySelector(".moving")?.classList.remove("moving");
+    }
+
+    document.querySelectorAll(".knob").forEach(k => {
+        k.addEventListener("mousedown", moveStart);
+        k.addEventListener("touchstart", moveStart);
+    });
+    
+    addEventListener("mousemove", evt => moveContinue(evt, evt));
+    addEventListener("touchmove", evt => moveContinue(evt, evt.targetTouches[0]));
+    addEventListener("mouseup", moveStop);
+    addEventListener("touchend", moveStop);
+
+</script>
+
+
+</html>

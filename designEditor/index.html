@@ -90,6 +90,7 @@
         .editor .container .selected[data-moving="true"] {
             animation-play-state: paused;
             animation-duration: 0s;
+            background: rgba(255, 255, 255, 0.5);
             text-decoration: underline cyan;
         }
 
@@ -100,16 +101,26 @@
                 outline-offset: 0px;
                 text-decoration: underline cyan;
             }  
-            50% {
+            25% {
                 outline-color: yellow;
                 outline-offset: -7px;
                 text-decoration: underline yellow;
             } 
-            to {
+            50% {
+                outline-color: rgb(255, 0, 64);
+                outline-offset: 0px;
+                text-decoration: underline rgb(255, 0, 64);
+            }  
+            75% {
+                outline-color: rgb(0, 134, 11);
+                outline-offset: -7px;
+                text-decoration: rgb(0, 134, 11);
+            } 
+            100% {
                 outline-color: cyan;
                 outline-offset: 0px;
                 text-decoration: underline cyan;
-            }          
+            }
         }
     </style>
 </head>

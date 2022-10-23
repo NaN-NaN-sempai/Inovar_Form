@@ -1,0 +1,149 @@
+.gradientInput {
+    width: 100%;
+}
+
+
+.gradientInput .controllers {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 2px solid var(--secondColor);
+    border-radius: 50px;
+}
+
+.gradientInput .controllers .button {
+    padding: 5px;
+    background: var(--mainColor);
+    border: 2px solid var(--secondColor);
+    color: var(--secondColor);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.gradientInput .controllers .button:active {
+    background: var(--secondColor);
+    color: var(--mainColor);
+
+}
+
+.gradientInput .controllers .simplyColorInput {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid var(--secondColor);
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gradientInput .controllers .simplyColorInput span {
+    --paddingSize: 5px;
+    padding: 0 var(--paddingSize) 0 var(--paddingSize);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 120px;
+}
+
+.gradientInput .controllers .simplyColorInput .inputColor {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: 2px solid var(--secondColor);
+    position: relative;
+    left: -2px;
+}
+::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+::-webkit-color-swatch{
+    border-radius: 0;
+}
+::-moz-color-swatch,
+::-moz-focus-inner{
+    border: none;
+}
+::-moz-focus-inner{
+    padding: 0;
+}
+
+.gradientInput .gradientDisplay {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    border: 2px solid var(--secondColor);
+    background: linear-gradient(to right, black, red);
+    cursor: pointer;
+
+}
+
+.gradientInput .gradientDisplay .indicator {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 102%;
+    width: 3px;
+    background: white;
+    border: 2px solid var(--secondColor);
+    pointer-events: none;
+}
+
+.gradientInput .gradientDisplay .indicator .knob {
+    --knobSize: 30px;
+    position: absolute;
+    bottom: 10px;
+    transform: translateX(-50%);
+    height: var(--knobSize);
+    width: var(--knobSize);
+    background: white;
+    border: 2px solid var(--secondColor);
+    border-radius: 10px;
+    cursor: move;
+    outline: none;
+    pointer-events: all;
+}
+.gradientInput .gradientDisplay .indicator .knob.selected {
+    outline: 3px solid cyan;
+    animation: infinite blinkSelected 1.5s linear;
+}
+
+.gradientInput .gradientDisplay .indicator .knob span {
+    font-size: 10px;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+    user-select: none;
+}
+
+
+@keyframes blinkSelected {
+        from {
+            outline-color: cyan;
+            outline-offset: 5px;
+        }  
+        25% {
+            outline-color: yellow;
+            outline-offset: 1px;
+        } 
+        50% {
+            outline-color: rgb(255, 0, 64);
+            outline-offset: 5px;
+        }  
+        75% {
+            outline-color: rgb(0, 134, 11);
+            outline-offset: 1px;
+        } 
+        100% {
+            outline-color: cyan;
+            outline-offset: 5px;
+        }          
+    }
