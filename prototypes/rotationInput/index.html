@@ -102,9 +102,9 @@
         
         var {pageX} = eventSource;
 
-        var direction = evt.pageX < moving.dataset.xDirection? -5: 
-                        evt.pageX > moving.dataset.xDirection? 5: 0;
-        moving.dataset.xDirection = evt.pageX;
+        var direction = pageX < moving.dataset.xDirection? -5: 
+                        pageX > moving.dataset.xDirection? 5: 0;
+        moving.dataset.xDirection = pageX;
 
         setRotation(moving, direction);
     }
@@ -148,6 +148,7 @@
         border-radius: 50%;
         position: relative;
         cursor: ew-resize;
+        touch-action: none;
     }
     .rotationInput .knob .indicator {
         width: var(--rotationBorderSize);
