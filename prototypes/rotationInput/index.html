@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../../colors.css">
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/scrollBar.css">
+    
+    <!-- Icones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+    <!-- Endereco -->
+    <div class="mainContainer">
+        <h2 class="title">
+            Protótipo
+        </h2>
+        <hr><br>
+
+        <span class="title">Entrada de Rotação</span>
+        <br><br>
+
+        <div id="te" class="rotationInput" data-value="0deg">
+            <div class="knob">
+                <div class="indicator"></div>
+            </div>
+            <span class="label">0°</span>
+        </div>
+
+        <br><br>
+
+        <div id="te" class="rotationInput" data-value="0deg">
+            <div class="knob">
+                <div class="indicator"></div>
+            </div>
+            <span class="label">0°</span>
+        </div>
+
+        <br><br>
+        <span class="title">Várias Entradas</span>
+        <br><br>
+
+        <div style="display: flex; justify-content: space-around;">
+            <div id="te" class="rotationInput" data-value="0deg">
+                <div class="knob">
+                    <div class="indicator"></div>
+                </div>
+                <span class="label">0°</span>
+            </div>
+            
+            <div id="te" class="rotationInput" data-value="0deg">
+                <div class="knob">
+                    <div class="indicator"></div>
+                </div>
+                <span class="label">0°</span>
+            </div>
+            
+            <div id="te" class="rotationInput" data-value="0deg">
+                <div class="knob">
+                    <div class="indicator"></div>
+                </div>
+                <span class="label">0°</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const setRotation = (moving, direction) => {
+        var lastValue = parseInt(moving.parentNode.dataset.value.replace("deg", ""));
+
+        var resultRotation = (lastValue + direction) % 360;
+
+        moving.style.transform = `rotate(${resultRotation}deg)`;
+
+        moving.parentNode.dataset.value = resultRotation + "deg";
+
+        moving.parentElement.querySelector(".label").innerHTML = resultRotation + "°";
+    }
+    
+    const moveStart = (evt) => {
+        var {target, clientX} = evt;
+        
+        target.classList.add("moving");
+
+        target.dataset.xDirection = 0;
+    }
+
+    const moveContinue = (evt, eventSource) => {
+        var moving = document.querySelector(".moving");
+
+        if(!moving) return;
+        if(!moving.parentElement.classList.contains("rotationInput")) return; 
+
+        evt.preventDefault();
+
+        var sizeElement = document.body;
+        
+        var {pageX} = eventSource;
+
+        var direction = evt.pageX < moving.dataset.xDirection? -5: 
+                        evt.pageX > moving.dataset.xDirection? 5: 0;
+        moving.dataset.xDirection = evt.pageX;
+
+        setRotation(moving, direction);
+    }
+
+    const moveStop = () => {
+        document.querySelector(".moving")?.classList.remove("moving");
+    }
+
+    document.querySelectorAll(".rotationInput .knob").forEach(k => {
+        k.addEventListener("mousedown", moveStart);
+        k.addEventListener("touchstart", moveStart);
+        k.addEventListener("wheel", evt => {
+            evt.preventDefault();
+            var delta = Math.sign(evt.deltaY);
+            setRotation(k, delta*7);
+        });
+    });
+    
+    addEventListener("mousemove", evt => moveContinue(evt, evt));
+    addEventListener("touchmove", evt => moveContinue(evt, evt.targetTouches[0]));
+    addEventListener("mouseup", moveStop);
+    addEventListener("touchend", moveStop);
+</script>
+
+<style>
+    :root {
+        --rotationKnobSize: 50px;
+        --rotationBorderSize: 3px;
+    }
+    .rotationInput {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: var(--rotationKnobSize);
+    }
+
+    .rotationInput .knob {
+        width: var(--rotationKnobSize);
+        height: var(--rotationKnobSize);
+        border: var(--rotationBorderSize) solid var(--secondColor);
+        border-radius: 50%;
+        position: relative;
+        cursor: ew-resize;
+    }
+    .rotationInput .knob .indicator {
+        width: var(--rotationBorderSize);
+        height: 60%;
+        position: absolute;
+        right: 50%;
+        top: -1px;
+        transform: translateX(50%);
+        background: var(--secondColor);
+        border-radius: 0 0 10px 10px;
+        pointer-events: none;
+    }
+    .rotationInput .label {
+        width: 100%;
+        text-align: center;
+        border: var(--rotationBorderSize) solid var(--secondColor);
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-radius: 10px;
+        padding-top: var(--rotationBorderSize);
+    }
+</style>
+
+</html>
