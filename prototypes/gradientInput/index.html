@@ -236,13 +236,15 @@ document.querySelectorAll(".gradientInput").forEach(gi => {
                     indicator.classList.add("indicator");
                     indicator.dataset.color = "#000000";
                     indicator.style.left =  porcX + "%";
+                    gradientHolder.querySelectorAll(".knob").forEach(k => k.parentNode.style.zIndex = 1);
+                    indicator.style.zIndex = 10;
 
                 var knob = document.createElement("div");
                     knob.classList.add("knob");
                     knob.classList.add("selected");
                     knob.classList.add("moving");
-                    knob.addEventListener("mousedown", moveStart);
-                    knob.addEventListener("touchstart", moveStart);
+                    knob.addEventListener("mousedown", inputGradientMoveStart);
+                    knob.addEventListener("touchstart", inputGradientMoveStart);
 
                 var span = document.createElement("span");
                     span.innerHTML = porcX.toFixed(0) + "%";
@@ -269,10 +271,11 @@ document.querySelectorAll(".gradientInput").forEach(gi => {
 
 <!-- evt handlers -->
 <script>
-    const moveStart = (evt) => {
+    const inputGradientMoveStart = (evt) => {
         var e = event.target;
 
         if(!e.classList.contains("knob")) return;
+        if(!e.parentNode.parentNode.parentNode.classList.contains("gradientInput")) return;
 
         evt.preventDefault();
 
@@ -291,10 +294,11 @@ document.querySelectorAll(".gradientInput").forEach(gi => {
 
     }
 
-    const moveContinue = (evt, evtSource) => {
+    const inputGradientMoveContinue = (evt, evtSource) => {
         var moving = document.querySelector(".moving");
 
-        if(!moving) return
+        if(!moving) return;
+        if(!moving.parentNode.parentNode.parentNode.classList.contains("gradientInput")) return;
 
         var gradientHolder = moving.parentNode.parentNode;
         
@@ -323,19 +327,19 @@ document.querySelectorAll(".gradientInput").forEach(gi => {
         setGradient(gradientHolder)
     }
     
-    const moveStop = (evt) => {
+    const inputGradientMoveStop = (evt) => {
         document.querySelector(".moving")?.classList.remove("moving");
     }
 
     document.querySelectorAll(".gradientInput .knob").forEach(k => {
-        k.addEventListener("mousedown", moveStart);
-        k.addEventListener("touchstart", moveStart);
+        k.addEventListener("mousedown", inputGradientMoveStart);
+        k.addEventListener("touchstart", inputGradientMoveStart);
     });
     
-    addEventListener("mousemove", evt => moveContinue(evt, evt));
-    addEventListener("touchmove", evt => moveContinue(evt, evt.targetTouches[0]));
-    addEventListener("mouseup", moveStop);
-    addEventListener("touchend", moveStop);
+    addEventListener("mousemove", evt => inputGradientMoveContinue(evt, evt));
+    addEventListener("touchmove", evt => inputGradientMoveContinue(evt, evt.targetTouches[0]));
+    addEventListener("mouseup", inputGradientMoveStop);
+    addEventListener("touchend", inputGradientMoveStop);
 
 </script>
 

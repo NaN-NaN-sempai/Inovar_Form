@@ -194,13 +194,15 @@
                     indicator.classList.add("indicator");
                     indicator.dataset.color = "#000000";
                     indicator.style.left =  porcX + "%";
+                    gradientHolder.querySelectorAll(".knob").forEach(k => k.parentNode.style.zIndex = 1);
+                    indicator.style.zIndex = 10;
 
                 var knob = document.createElement("div");
                     knob.classList.add("knob");
                     knob.classList.add("selected");
                     knob.classList.add("moving");
-                    knob.addEventListener("mousedown", moveStart);
-                    knob.addEventListener("touchstart", moveStart);
+                    knob.addEventListener("mousedown", igMoveStart);
+                    knob.addEventListener("touchstart", igMoveStart);
 
                 var span = document.createElement("span");
                     span.innerHTML = porcX.toFixed(0) + "%";
@@ -230,6 +232,7 @@
         var e = event.target;
 
         if(!e.classList.contains("knob")) return;
+        if(!e.parentNode.parentNode.classList.contains("gradientDisplay")) return;
 
         evt.preventDefault();
 
@@ -251,7 +254,8 @@
     const igMoveContinue = (evt, evtSource) => {
         var moving = document.querySelector(".moving");
 
-        if(!moving) return
+        if(!moving) return;
+        if(!moving.parentNode.parentNode.classList.contains("gradientDisplay")) return;
 
         var gradientHolder = moving.parentNode.parentNode;
         
