@@ -214,8 +214,7 @@
 
     // captalize first letter of each word 
     String.prototype.toTitleCase = function (){
-        return this
-            .toLowerCase().split(' ')
+        return this.toLowerCase().split(' ')
             .map(word => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ');
     };
@@ -236,8 +235,8 @@
         
         if(navigator.share) {
             navigator.share({
-                title: 'Minhas Cores: '+nameListText,
-                text: 'Seletor de Cores | Inovar Personalização',
+                title: "Minhas Cores: " + nameListText + " | Seletor de Cores | Inovar Personalização",
+                text: "Minhas Cores: " + nameListText + " | Seletor de Cores | Inovar Personalização",
                 url: shareText,
             })
             .then(() => {
@@ -245,10 +244,10 @@
                 button.classList.add("success");
 
                 clearInterval(copiedInterval);
-                        copiedInterval = setTimeout(() => {
-                            button.innerHTML = defaultButtonText;
-                            button.classList.remove("success");
-                        }, 1500);
+                copiedInterval = setTimeout(() => {
+                    button.innerHTML = defaultButtonText;
+                    button.classList.remove("success");
+                }, 1500);
             })
             .catch((error) => console.log('Erro ao compartilhar:\n' + error));
 
